@@ -885,15 +885,29 @@ function refocus(id) {
 }
 
 function stepLeaf(id, edId, d) {
+  const v = VIEWERS.find(x => x.id === id);
+  if (!v) return;
+  const pnos = v._meta.ed.showcase_pnos || [];
   const inp = document.getElementById(id + '-inp');
-  jumpLeaf(id, edId, parseInt(inp.value || '1', 10) + d);
+  const cur = parseInt(inp.value || '1', 10);
+  if (pnos.length) {
+    const ci = pnos.indexOf(cur);
+    const nextIdx = ci >= 0 ? Math.max(0, Math.min(pnos.length - 1, ci + d)) : 0;
+    jumpLeaf(id, edId, pnos[nextIdx]);
+  } else {
+    jumpLeaf(id, edId, cur + d);
+  }
 }
 
 function jumpLeaf(id, edId, target) {
   const v = VIEWERS.find(x => x.id === id);
   if (!v) return;
   const ed = v._meta.ed;
-  const pno = Math.max(ed.first_leaf, Math.min(ed.max_pno, parseInt(target || ed.first_leaf, 10)));
+  const pnos = ed.showcase_pnos || [];
+  let pno = parseInt(target || ed.first_leaf, 10);
+  if (pnos.length && !pnos.includes(pno)) {
+    pno = pnos.reduce((prev, curr) => Math.abs(curr - pno) < Math.abs(prev - pno) ? curr : prev);
+  }
   document.getElementById(id + '-inp').value = pno;
   v.clearOverlays();
   v._meta.focusBounds = null;

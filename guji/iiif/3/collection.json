@@ -1,0 +1,75 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/collection.json",
+  "type": "Collection",
+  "label": {
+    "zh-CN": [
+      "《红楼梦》清代脂评钞本善本影像集（Pilot Showcase IIIF v3）"
+    ],
+    "ja": [
+      "『紅樓夢』清代脂評古鈔本善本画像コレクション（先行公開パイロット版 IIIF v3）"
+    ]
+  },
+  "items": [
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/jiaxu/manifest.json",
+      "type": "Manifest",
+      "label": {
+        "zh-CN": [
+          "甲戌本"
+        ],
+        "ja": [
+          "甲戌本（乾隆19年鈔本）"
+        ]
+      }
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/jimao/manifest.json",
+      "type": "Manifest",
+      "label": {
+        "zh-CN": [
+          "己卯本"
+        ],
+        "ja": [
+          "己卯本（怡親王府系鈔本）"
+        ]
+      }
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/manifest.json",
+      "type": "Manifest",
+      "label": {
+        "zh-CN": [
+          "庚辰本"
+        ],
+        "ja": [
+          "庚辰本（北京大学図書館蔵本）"
+        ]
+      }
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/shuxu/manifest.json",
+      "type": "Manifest",
+      "label": {
+        "zh-CN": [
+          "舒序本"
+        ],
+        "ja": [
+          "舒序本（乾隆54年舒元煒序本）"
+        ]
+      }
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/zheng/manifest.json",
+      "type": "Manifest",
+      "label": {
+        "zh-CN": [
+          "郑藏本"
+        ],
+        "ja": [
+          "鄭蔵本（鄭振鐸旧蔵残鈔本）"
+        ]
+      }
+    }
+  ]
+}

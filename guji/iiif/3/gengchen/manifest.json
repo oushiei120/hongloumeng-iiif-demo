@@ -1,0 +1,2163 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/manifest.json",
+  "type": "Manifest",
+  "label": {
+    "zh-CN": [
+      "庚辰本"
+    ],
+    "ja": [
+      "庚辰本（北京大学図書館蔵本）"
+    ]
+  },
+  "summary": {
+    "zh-CN": [
+      "乾隆庚辰脂砚斋重评石头记 · 存78回 · 全本955叶双叶原图公开"
+    ],
+    "ja": [
+      "乾隆庚辰脂硯齋重評石頭記 · 現存78回 · 全955葉見開IIIF画像公開"
+    ]
+  },
+  "rights": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "viewingDirection": "right-to-left",
+  "behavior": [
+    "paged"
+  ],
+  "items": [
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p2",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.2"
+        ],
+        "ja": [
+          "庚辰本 第2葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p2/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p2/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0002.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p3",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.3"
+        ],
+        "ja": [
+          "庚辰本 第3葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p3/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p3/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0003.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p4",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.4"
+        ],
+        "ja": [
+          "庚辰本 第4葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p4/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p4/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0004.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p5",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.5"
+        ],
+        "ja": [
+          "庚辰本 第5葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p5/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p5/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0005.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p6",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.6"
+        ],
+        "ja": [
+          "庚辰本 第6葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p6/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p6/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0006.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p7",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.7"
+        ],
+        "ja": [
+          "庚辰本 第7葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p7/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p7/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0007.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p8",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.8"
+        ],
+        "ja": [
+          "庚辰本 第8葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p8/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p8/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0008.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p9",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.9"
+        ],
+        "ja": [
+          "庚辰本 第9葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p9/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p9/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0009.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p10",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.10"
+        ],
+        "ja": [
+          "庚辰本 第10葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p10/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p10/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0010.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p11",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.11"
+        ],
+        "ja": [
+          "庚辰本 第11葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p11/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p11/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0011.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p12",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.12"
+        ],
+        "ja": [
+          "庚辰本 第12葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p12/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p12/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0012.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p13",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.13"
+        ],
+        "ja": [
+          "庚辰本 第13葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p13/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p13/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0013.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p14",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.14"
+        ],
+        "ja": [
+          "庚辰本 第14葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p14/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p14/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0014.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p15",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.15"
+        ],
+        "ja": [
+          "庚辰本 第15葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p15/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p15/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0015.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p16",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.16"
+        ],
+        "ja": [
+          "庚辰本 第16葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p16/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p16/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0016.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p17",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.17"
+        ],
+        "ja": [
+          "庚辰本 第17葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p17/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p17/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0017.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p18",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.18"
+        ],
+        "ja": [
+          "庚辰本 第18葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p18/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p18/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0018.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p19",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.19"
+        ],
+        "ja": [
+          "庚辰本 第19葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p19/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p19/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0019.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p20",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.20"
+        ],
+        "ja": [
+          "庚辰本 第20葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p20/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p20/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0020.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p21",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.21"
+        ],
+        "ja": [
+          "庚辰本 第21葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p21/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p21/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0021.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p22",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.22"
+        ],
+        "ja": [
+          "庚辰本 第22葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p22/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p22/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0022.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p23",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.23"
+        ],
+        "ja": [
+          "庚辰本 第23葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p23/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p23/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0023.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p24",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.24"
+        ],
+        "ja": [
+          "庚辰本 第24葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p24/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p24/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0024.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p25",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.25"
+        ],
+        "ja": [
+          "庚辰本 第25葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p25/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p25/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0025.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p26",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.26"
+        ],
+        "ja": [
+          "庚辰本 第26葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p26/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p26/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0026.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p27",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.27"
+        ],
+        "ja": [
+          "庚辰本 第27葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p27/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p27/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0027.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p28",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.28"
+        ],
+        "ja": [
+          "庚辰本 第28葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p28/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p28/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0028.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p29",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.29"
+        ],
+        "ja": [
+          "庚辰本 第29葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p29/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p29/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0029.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p29"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p30",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.30"
+        ],
+        "ja": [
+          "庚辰本 第30葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p30/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p30/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0030.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p31",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.31"
+        ],
+        "ja": [
+          "庚辰本 第31葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p31/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p31/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0031.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p32",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.32"
+        ],
+        "ja": [
+          "庚辰本 第32葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p32/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p32/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0032.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p32"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p33",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.33"
+        ],
+        "ja": [
+          "庚辰本 第33葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p33/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p33/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0033.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p33"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p34",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.34"
+        ],
+        "ja": [
+          "庚辰本 第34葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p34/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p34/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0034.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p34"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p35",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.35"
+        ],
+        "ja": [
+          "庚辰本 第35葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p35/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p35/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0035.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p35"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p36",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.36"
+        ],
+        "ja": [
+          "庚辰本 第36葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p36/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p36/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0036.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p36"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p37",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.37"
+        ],
+        "ja": [
+          "庚辰本 第37葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p37/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p37/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0037.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p37"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p38",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.38"
+        ],
+        "ja": [
+          "庚辰本 第38葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p38/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p38/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0038.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p38"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p39",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.39"
+        ],
+        "ja": [
+          "庚辰本 第39葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p39/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p39/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0039.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p39"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p257",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.257"
+        ],
+        "ja": [
+          "庚辰本 第257葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p257/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p257/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0257.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p257"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p258",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.258"
+        ],
+        "ja": [
+          "庚辰本 第258葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p258/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p258/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0258.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p258"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p259",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.259"
+        ],
+        "ja": [
+          "庚辰本 第259葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p259/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p259/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0259.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p259"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p260",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.260"
+        ],
+        "ja": [
+          "庚辰本 第260葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p260/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p260/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0260.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p260"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p261",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.261"
+        ],
+        "ja": [
+          "庚辰本 第261葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p261/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p261/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0261.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p261"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p262",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.262"
+        ],
+        "ja": [
+          "庚辰本 第262葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p262/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p262/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0262.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p262"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p263",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.263"
+        ],
+        "ja": [
+          "庚辰本 第263葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p263/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p263/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0263.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p263"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p264",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.264"
+        ],
+        "ja": [
+          "庚辰本 第264葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p264/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p264/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0264.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p264"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p265",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.265"
+        ],
+        "ja": [
+          "庚辰本 第265葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p265/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p265/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0265.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p265"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p266",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.266"
+        ],
+        "ja": [
+          "庚辰本 第266葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p266/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p266/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0266.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p266"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p267",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.267"
+        ],
+        "ja": [
+          "庚辰本 第267葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p267/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p267/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0267.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p267"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p268",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.268"
+        ],
+        "ja": [
+          "庚辰本 第268葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p268/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p268/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0268.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p268"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p269",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.269"
+        ],
+        "ja": [
+          "庚辰本 第269葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p269/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p269/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0269.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p269"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p270",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.270"
+        ],
+        "ja": [
+          "庚辰本 第270葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p270/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p270/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0270.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p270"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p271",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.271"
+        ],
+        "ja": [
+          "庚辰本 第271葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p271/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p271/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0271.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p271"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p272",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.272"
+        ],
+        "ja": [
+          "庚辰本 第272葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p272/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p272/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0272.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p272"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p273",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.273"
+        ],
+        "ja": [
+          "庚辰本 第273葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p273/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p273/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0273.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p273"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p274",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.274"
+        ],
+        "ja": [
+          "庚辰本 第274葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p274/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p274/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0274.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p274"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p275",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.275"
+        ],
+        "ja": [
+          "庚辰本 第275葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p275/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p275/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0275.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p275"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p276",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.276"
+        ],
+        "ja": [
+          "庚辰本 第276葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p276/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p276/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0276.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p276"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p277",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.277"
+        ],
+        "ja": [
+          "庚辰本 第277葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p277/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p277/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0277.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p277"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p278",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.278"
+        ],
+        "ja": [
+          "庚辰本 第278葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p278/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p278/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0278.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p278"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p279",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "庚辰本 p.279"
+        ],
+        "ja": [
+          "庚辰本 第279葉"
+        ]
+      },
+      "width": 2400,
+      "height": 2047,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p279/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p279/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/gengchen/page_0279.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 2400,
+                "height": 2047
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/gengchen/canvas/p279"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
