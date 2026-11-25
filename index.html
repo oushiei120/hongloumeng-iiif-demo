@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>紅樓夢諸本對校 · IIIF 善本画像検索システム (Pilot Edition)</title>
+<title>红楼梦诸本对校 · IIIF 善本影像检索</title>
 <script src="./vendor/openseadragon.min.js"></script>
 <style>
   :root {
@@ -257,29 +257,29 @@
 <header>
   <div class="brand">
     <span class="seal-mark">紅樓</span>
-    <span class="brand-title" id="uiTitle">紅樓夢諸本對校 · IIIF 善本影像檢索</span>
-    <span class="pilot-tag" id="uiPilotBadge">Pilot Showcase</span>
+    <span class="brand-title" id="uiTitle">红楼梦诸本对校 · IIIF 善本影像检索</span>
+    <span class="pilot-tag" id="uiPilotBadge">先行公开示范版</span>
   </div>
 
   <div class="nav-bar">
     <div class="seg-group">
-      <button class="seg-btn active" id="tabSearchBtn" onclick="switchDrawer('search', this)">諸本對校檢索</button>
-      <button class="seg-btn" id="tabShelfBtn" onclick="switchDrawer('shelf', this)">IIIF 善本書架</button>
+      <button class="seg-btn active" id="tabSearchBtn" onclick="switchDrawer('search', this)">诸本对校检索</button>
+      <button class="seg-btn" id="tabShelfBtn" onclick="switchDrawer('shelf', this)">IIIF 善本书架</button>
     </div>
 
     <div class="seg-group">
-      <button class="seg-btn active" id="colAutoBtn" onclick="setCols('auto', this)">諸本並觀</button>
-      <button class="seg-btn" id="col2Btn" onclick="setCols('2', this)">雙窗對讀</button>
-      <button class="seg-btn" id="col1Btn" onclick="setCols('1', this)">單葉精覽</button>
+      <button class="seg-btn active" id="colAutoBtn" onclick="setCols('auto', this)">诸本并观</button>
+      <button class="seg-btn" id="col2Btn" onclick="setCols('2', this)">双窗对读</button>
+      <button class="seg-btn" id="col1Btn" onclick="setCols('1', this)">单页细读</button>
     </div>
 
-    <button class="ghost-action" id="boxBtn" onclick="toggleBoxes()">字枠 [B]</button>
+    <button class="ghost-action" id="boxBtn" onclick="toggleBoxes()">显示字框 [B]</button>
     <a class="ghost-action" id="miradorTopLink" href="#" target="_blank">Mirador 3 ↗</a>
     <a class="ghost-action" id="iiifColLink" href="#" target="_blank">IIIF v3</a>
 
     <div class="seg-group">
-      <button class="seg-btn" id="langZh" onclick="setLang('zh')">中文</button>
-      <button class="seg-btn" id="langJa" onclick="setLang('ja')">日本語</button>
+      <button class="seg-btn" id="langZh" onclick="setLang('zh')" lang="zh-CN">简体中文</button>
+      <button class="seg-btn" id="langJa" onclick="setLang('ja')" lang="ja">日本語</button>
     </div>
   </div>
 </header>
@@ -321,7 +321,7 @@
       </div>
     </div>
     <div class="windows-grid cols-auto" id="windowsGrid">
-      <div class="stage-placeholder" id="loadingStage">Loading IIIF Pilot Showcase…</div>
+      <div class="stage-placeholder" id="loadingStage">正在加载影像…</div>
     </div>
   </main>
 </div>
@@ -329,25 +329,26 @@
 <script>
 const I18N = {
   zh: {
-    title: "紅樓夢諸本對校 · IIIF 善本影像檢索",
-    pilot: "先行公開示範版",
-    tabSearch: "諸本對校檢索",
-    tabShelf: "IIIF 善本書架 (5種)",
-    colAuto: "諸本並觀", col2: "雙窗對讀", col1: "單葉精覽",
-    boxBtn: "朱框顯隱 [B]",
-    scope: "【先行公開範圍】全文單字檢索開放「第一回～第三回、第二十三回～第二十四回」；五種清代善本（共 3,744 葉公有領域原葉）IIIF v3 圖像已全卷公開。",
-    composerLabel: "批量檢索詞句（每行一條 · 支援繁/簡/日文漢字與清鈔俗字通檢）",
-    presets: ["寶黛初見", "冷子興演說", "太虛幻境聯", "元春題詠", "批量詞彙"],
-    searchBtn: "檢索諸本原葉",
-    statFmt: (q, h, ms) => `共檢索 ${q} 條 · 定位諸本原葉 ${h} 處 · 耗時 ${ms} ms`,
-    parallelBtn: (n) => `諸本並觀 (${n})`,
-    noHit: "示範回次內未見此句（或該鈔本原缺此回）",
-    folioFmt: (p) => `第 ${p} 葉`,
+    title: "红楼梦诸本对校 · IIIF 善本影像检索",
+    pilot: "先行公开示范版",
+    tabSearch: "诸本对校检索",
+    tabShelf: "IIIF 善本书架（5种）",
+    colAuto: "诸本并观", col2: "双窗对读", col1: "单页细读",
+    boxBtn: "显示字框 [B]",
+    scope: "公开检索范围为第 1 至 3 回、第 23 至 24 回。五种底本的全卷影像共 3,744 页。",
+    composerLabel: "批量检索词句（每行一条，支持简繁汉字、日文新字体和清抄本俗字）",
+    presets: ["宝黛初见", "冷子兴演说", "太虚幻境联", "元春题咏", "批量词汇"],
+    searchBtn: "检索各本原页",
+    statFmt: (q, h, ms) => `检索 ${q} 条 · 命中 ${h} 处 · 用时 ${ms} ms`,
+    parallelBtn: (n) => `诸本并观 (${n})`,
+    noHit: "公开选页中未检索到此句",
+    folioFmt: (p) => `第 ${p} 页`,
     openBook: "展卷",
-    legSame: "朱框：同字定位",
-    legDiff: "金框：異文 / 清鈔俗字",
-    stageIdle: "滾輪無級縮放 · 拖拽平移 · 點擊左側條目同步定位諸本原葉",
-    stageParallel: (q, n) => `對校句：「${q}」 — 同步展開 ${n} 種清代善本原葉`
+    legSame: "红框：同字定位",
+    legDiff: "金框：异文或清抄本俗字",
+    loading: "正在加载影像…", focus: "定位到命中位置", mirador: "在 Mirador 中打开",
+    stageIdle: "原页浏览",
+    stageParallel: (q, n) => `对校句「${q}」 · 已打开 ${n} 种底本原页`
   },
   ja: {
     title: "紅樓夢諸本對校 · IIIF 善本画像検索システム",
@@ -367,7 +368,8 @@ const I18N = {
     openBook: "閲覧",
     legSame: "朱枠：一致字",
     legDiff: "金枠：異文・鈔本俗字",
-    stageIdle: "ホイールで拡大縮小 ・ ドラッグで移動 ・ W3C Web Annotation (#xywh) 準拠",
+    loading: "画像を読み込み中…", focus: "該当箇所に戻る", mirador: "Mirador で開く",
+    stageIdle: "原本画像の閲覧",
     stageParallel: (q, n) => `対校箇所：「${q}」 — ${n} 種の善本原葉を同時表示中`
   }
 };
@@ -572,8 +574,21 @@ function packHit(edMeta, pg, absS, absE, combOrig, cBoxes, score) {
   };
 }
 
+function editionLabel(ed) {
+  return LANG === 'ja' ? ed.ja_name.split('（')[0] : ed.zh_name;
+}
+
+function updateStageCaption() {
+  const el = document.getElementById('stageCaption');
+  const {query, count} = el.dataset;
+  el.textContent = query ? I18N[LANG].stageParallel(query, Number(count)) : I18N[LANG].stageIdle;
+}
+
 function applyLangUI() {
   const t = I18N[LANG];
+  document.title = t.title;
+  const loading = document.getElementById('loadingStage');
+  if (loading) loading.textContent = t.loading;
   document.documentElement.lang = LANG === 'ja' ? 'ja' : 'zh-CN';
   document.getElementById('langZh').classList.toggle('active', LANG === 'zh');
   document.getElementById('langJa').classList.toggle('active', LANG === 'ja');
@@ -590,13 +605,19 @@ function applyLangUI() {
   document.getElementById('searchBtn').textContent = t.searchBtn;
   document.getElementById('legSame').textContent = t.legSame;
   document.getElementById('legDiff').textContent = t.legDiff;
-  document.getElementById('stageCaption').textContent = t.stageIdle;
+  updateStageCaption();
 
   document.getElementById('presetBar').innerHTML = t.presets.map((lbl, i) =>
     `<button class="preset-chip" onclick="loadPreset(${i})">${esc(lbl)}</button>`
   ).join('');
 
   if (BUNDLE) {
+    document.querySelectorAll('.iiif-win').forEach(win => {
+      const ed = BUNDLE.editions.find(book => book.ed_id === win.dataset.edition);
+      win.querySelector('.win-ed').textContent = editionLabel(ed);
+      win.querySelector('.focus-btn').title = t.focus;
+      win.querySelector('.mirador-link').title = t.mirador;
+    });
     renderWitnessPills();
     renderCatalog();
     if (LAST_RESULTS) renderApparatus(LAST_RESULTS);
@@ -671,7 +692,7 @@ function renderWitnessPills() {
   document.getElementById('witnessBar').innerHTML = BUNDLE.editions.map(ed => {
     const on = SELECTED_EDS.has(ed.ed_id);
     return `<span class="wit-pill ${on ? 'checked' : ''}" onclick="toggleWit('${ed.ed_id}')">
-      <i class="dot"></i>${esc(ed.zh_name)}
+      <i class="dot"></i>${esc(editionLabel(ed))}
     </span>`;
   }).join('');
 }
@@ -750,7 +771,7 @@ function renderApparatus(data) {
     } else {
       html += `<table class="rdg-table"><tbody>`;
       flat.forEach(h => {
-        const shortWit = h.zh_name.replace('本', '');
+        const shortWit = editionLabel(h).replace(/本$/, '');
         const midHtml = h.char_boxes.map(cb =>
           cb.v ? `<span class="ch-diff">${esc(cb.c)}</span>` : `<span>${esc(cb.c)}</span>`
         ).join('');
@@ -775,6 +796,10 @@ function renderApparatus(data) {
 }
 
 function destroyViewers() {
+  const caption = document.getElementById('stageCaption');
+  delete caption.dataset.query;
+  delete caption.dataset.count;
+  updateStageCaption();
   VIEWERS.forEach(v => { try { v.destroy(); } catch (e) {} });
   VIEWERS = [];
 }
@@ -791,7 +816,8 @@ function openParallel(qi) {
   const grid = document.getElementById('windowsGrid');
   grid.innerHTML = '';
   const qShort = item.query.length > 36 ? item.query.slice(0, 36) + '…' : item.query;
-  document.getElementById('stageCaption').textContent = I18N[LANG].stageParallel(qShort, hits.length);
+  Object.assign(document.getElementById('stageCaption').dataset, { query: qShort, count: hits.length });
+  updateStageCaption();
   hits.forEach((h, i) => mountWin(grid, h, i));
 }
 
@@ -824,12 +850,13 @@ function mountWin(grid, hit, idx) {
   const miradorUrl = `https://projectmirador.org/embed/?iiif-content=${encodeURIComponent(hit.manifest_url)}`;
   const win = document.createElement('div');
   win.className = 'iiif-win';
+  win.dataset.edition = hit.ed_id;
   const id = `osd-${idx}-${Date.now()}`;
 
   win.innerHTML = `
     <div class="win-hud">
       <div class="win-label">
-        <span class="win-ed">${esc(hit.zh_name)}</span>
+        <span class="win-ed">${esc(editionLabel(ed))}</span>
         <span class="win-banxin">${hit.banxin ? esc(hit.banxin) : ''}</span>
       </div>
       <div class="win-nav">
@@ -837,8 +864,8 @@ function mountWin(grid, hit, idx) {
         <input class="hud-pno" id="${id}-inp" value="${hit.page_no}" onchange="jumpLeaf('${id}', '${hit.ed_id}', this.value)" />
         <span class="hud-total">/ ${ed.max_pno}</span>
         <button class="hud-btn" onclick="stepLeaf('${id}', '${hit.ed_id}', 1)">›</button>
-        <button class="hud-btn" title="Focus" onclick="refocus('${id}')">⌖</button>
-        <a class="hud-btn" href="${miradorUrl}" target="_blank" title="Open in Mirador 3">Mirador</a>
+        <button class="hud-btn focus-btn" title="${I18N[LANG].focus}" onclick="refocus('${id}')">⌖</button>
+        <a class="hud-btn mirador-link" href="${miradorUrl}" target="_blank" title="${I18N[LANG].mirador}">Mirador</a>
       </div>
     </div>
     <div class="osd-mount" id="${id}"></div>
