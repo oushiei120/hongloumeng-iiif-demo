@@ -11,11 +11,11 @@
     --washi-pure: #fcfbf8;
     --sumi: #1c1917;
     --sumi-soft: #4a433c;
-    --stone: #8a8075;
-    --hairline: rgba(42, 35, 29, 0.11);
+    --stone: #6f665c;
+    --hairline: rgba(42, 35, 29, 0.12);
     --cinnabar: #a83228;
     --kin: #b07418;
-    --kin-wash: rgba(196, 138, 36, 0.16);
+    --kin-wash: rgba(196, 138, 36, 0.18);
     --stage-bg: #11100f;
     --stage-card: #181614;
     --stage-border: rgba(255, 248, 235, 0.10);
@@ -25,282 +25,345 @@
 
   * { box-sizing: border-box; }
   ::selection { background: rgba(168, 50, 40, 0.18); color: var(--sumi); }
+  button, input, textarea { font: inherit; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 2px solid #d98a2b; outline-offset: 1px; }
 
   body {
-    margin: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden;
+    margin: 0; height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden;
     background: var(--washi); color: var(--sumi); font-family: var(--serif);
     -webkit-font-smoothing: antialiased;
   }
 
+  /* ---------- 顶栏 ---------- */
   header {
-    height: 50px; background: #161412; color: #efeae1; padding: 0 20px;
+    min-height: 50px; background: #161412; color: #efeae1; padding: 0 18px;
     display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
-    border-bottom: 1px solid rgba(198, 173, 138, 0.22); gap: 12px;
+    border-bottom: 1px solid rgba(198, 173, 138, 0.22); gap: 14px;
   }
-  .brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+  .brand { display: flex; align-items: center; gap: 11px; min-width: 0; flex: 1; }
   .seal-mark {
-    width: 24px; height: 24px; border: 1.5px solid #c94a3f; color: #e05a4e;
+    width: 26px; height: 26px; border: 1.5px solid #c94a3f; color: #e05a4e;
     display: inline-flex; align-items: center; justify-content: center;
     font-size: 11px; font-weight: 700; border-radius: 2px; background: rgba(168, 50, 40, 0.12); flex-shrink: 0;
   }
-  .brand-title { font-size: 15.5px; font-weight: 600; letter-spacing: 0.1em; color: #f5f1e8; white-space: nowrap; }
-  .pilot-tag {
-    font-family: var(--sans); font-size: 10.5px; color: #d8c39e;
-    border: 1px solid rgba(216, 195, 158, 0.35); padding: 1px 7px; border-radius: 2px;
-    background: rgba(216, 195, 158, 0.08); white-space: nowrap;
+  .brand-title {
+    margin: 0; font-size: 16px; font-weight: 600; letter-spacing: 0.08em; color: #f5f1e8;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;
   }
+  .pilot-tag {
+    font-family: var(--sans); font-size: 11px; color: #d8c39e;
+    border: 1px solid rgba(216, 195, 158, 0.35); padding: 1px 7px; border-radius: 2px;
+    background: rgba(216, 195, 158, 0.08); white-space: nowrap; flex-shrink: 0;
+  }
+  .nav-bar { display: flex; align-items: center; gap: 8px; font-family: var(--sans); flex-shrink: 0; }
 
-  .nav-bar { display: flex; align-items: center; gap: 7px; font-family: var(--sans); font-size: 11.5px; flex-wrap: nowrap; }
   .seg-group {
-    display: inline-flex; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 4px; padding: 2px; gap: 2px;
+    display: inline-flex; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 5px; padding: 2px; gap: 2px; font-family: var(--sans);
   }
   .seg-btn {
-    border: none; background: transparent; color: #a89f93; padding: 4px 10px;
-    border-radius: 3px; font-size: 11.5px; cursor: pointer; transition: all 0.15s; white-space: nowrap;
+    border: none; background: transparent; color: #b3aa9e; padding: 5px 11px;
+    border-radius: 3px; font-size: 12.5px; transition: all 0.15s; white-space: nowrap;
   }
   .seg-btn:hover { color: #f2ece1; }
-  .seg-btn.active { background: rgba(245, 238, 226, 0.15); color: #fff; font-weight: 500; }
+  .seg-btn.active { background: rgba(245, 238, 226, 0.17); color: #fff; font-weight: 500; }
 
   .ghost-action {
-    border: 1px solid rgba(255,255,255,0.13); background: transparent; color: #cfc6b9;
-    padding: 4px 9px; border-radius: 4px; font-size: 11.5px; cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.16); background: transparent; color: #d6cdc0;
+    padding: 5px 11px; border-radius: 5px; font-size: 12.5px; font-family: var(--sans);
     text-decoration: none; transition: all 0.15s; white-space: nowrap;
   }
   .ghost-action:hover { border-color: rgba(224, 90, 78, 0.65); color: #fff; background: rgba(168, 50, 40, 0.18); }
-  .ghost-action.off { opacity: 0.5; }
+  .ghost-action.off { color: #8d8478; }
 
-  .workspace { flex: 1; display: flex; min-height: 0; }
+  /* ---------- 主体 ---------- */
+  .workspace { flex: 1; display: flex; min-height: 0; position: relative; }
 
   .drawer {
-    width: 472px; min-width: 350px; max-width: 560px; background: var(--washi);
+    width: 460px; flex-shrink: 0; background: var(--washi);
     border-right: 1px solid var(--hairline); display: flex; flex-direction: column; min-height: 0;
-    transition: width 0.2s ease;
   }
-  .drawer.collapsed { width: 0; min-width: 0; overflow: hidden; border-right: none; }
+
+  .drawer-tabs { display: flex; border-bottom: 1px solid var(--hairline); background: #efe9dd; flex-shrink: 0; }
+  .dtab {
+    flex: 1; border: none; background: transparent; padding: 10px 8px 9px; font-family: var(--sans);
+    font-size: 13px; color: var(--stone); border-bottom: 2px solid transparent;
+  }
+  .dtab:hover { color: var(--sumi); }
+  .dtab.active { color: var(--sumi); font-weight: 600; border-bottom-color: var(--cinnabar); background: var(--washi-pure); }
 
   .pane { display: none; flex-direction: column; flex: 1; min-height: 0; }
   .pane.active { display: flex; }
 
-  .scope-notice {
-    padding: 8px 18px; background: #efe9dd; border-bottom: 1px solid var(--hairline);
-    font-family: var(--sans); font-size: 11.5px; color: #5c5248; line-height: 1.5;
+  .composer { padding: 14px 18px 14px; background: var(--washi-pure); border-bottom: 1px solid var(--hairline); flex-shrink: 0; }
+  .intro { margin: 0 0 12px; font-family: var(--sans); font-size: 12.5px; line-height: 1.65; color: var(--sumi-soft); }
+  .intro a, .link-btn {
+    color: var(--cinnabar); background: none; border: none; padding: 0; font-family: var(--sans); font-size: inherit;
+    text-decoration: underline; text-underline-offset: 2px;
   }
-
-  .composer {
-    padding: 14px 18px 13px; background: var(--washi-pure);
-    border-bottom: 1px solid var(--hairline);
-  }
-  .composer-top {
-    display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7px; gap: 8px; flex-wrap: wrap;
-  }
-  .composer-title { font-size: 11.5px; font-family: var(--sans); color: var(--stone); letter-spacing: 0.04em; }
-  .preset-bar { display: flex; gap: 7px; flex-wrap: wrap; }
-  .preset-chip {
-    border: none; background: transparent; color: var(--sumi-soft); font-family: var(--serif);
-    font-size: 12px; padding: 1px 0; border-bottom: 1px dotted rgba(74,67,60,0.38); cursor: pointer;
-  }
-  .preset-chip:hover { color: var(--cinnabar); border-bottom-color: var(--cinnabar); }
+  .field-label { display: block; font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--sumi-soft); margin: 0 0 6px; }
 
   textarea#queriesInput {
-    width: 100%; height: 82px; resize: vertical; padding: 9px 11px;
-    border: 1px solid rgba(42, 35, 29, 0.16); border-radius: 3px;
+    display: block; width: 100%; height: 96px; resize: vertical; padding: 9px 11px;
+    border: 1px solid rgba(42, 35, 29, 0.22); border-radius: 4px;
     background: var(--washi); color: var(--sumi);
-    font-family: var(--serif); font-size: 14.5px; line-height: 1.62;
+    font-family: var(--serif); font-size: 15px; line-height: 1.62;
     outline: none; transition: border-color 0.18s, background 0.18s;
   }
   textarea#queriesInput:focus { border-color: var(--cinnabar); background: #fff; }
+  textarea#queriesInput::placeholder { color: #a79d91; }
 
-  .witness-bar { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
-  .wit-pill {
-    font-family: var(--serif); font-size: 12.5px; padding: 3px 9px; border-radius: 2px;
-    border: 1px solid rgba(42, 35, 29, 0.15); background: transparent; color: var(--stone);
-    cursor: pointer; user-select: none; display: inline-flex; align-items: center; gap: 5px;
+  .preset-row { display: flex; gap: 6px; align-items: baseline; margin-top: 8px; font-family: var(--sans); font-size: 12px; color: var(--stone); }
+  .preset-row > span { flex-shrink: 0; }
+  .preset-bar { display: flex; gap: 5px; flex-wrap: wrap; }
+  .preset-chip {
+    border: 1px solid rgba(42, 35, 29, 0.14); background: var(--washi); color: var(--sumi-soft); font-family: var(--serif);
+    font-size: 12.5px; padding: 2px 9px; border-radius: 999px;
   }
-  .wit-pill .dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(42,35,29,0.2); }
-  .wit-pill.checked { background: #25211e; border-color: #25211e; color: #f7f3eb; }
-  .wit-pill.checked .dot { background: #d95348; }
+  .preset-chip:hover { color: var(--cinnabar); border-color: var(--cinnabar); background: #fff; }
 
-  .composer-foot { display: flex; align-items: center; margin-top: 10px; gap: 6px; }
+  .wit-block { margin-top: 13px; }
+  .witness-bar { display: flex; flex-wrap: wrap; gap: 6px; }
+  .wit-pill {
+    font-family: var(--serif); font-size: 13px; padding: 4px 10px 4px 8px; border-radius: 3px;
+    border: 1px solid rgba(42, 35, 29, 0.2); background: transparent; color: var(--stone);
+    user-select: none; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .wit-pill .box {
+    width: 12px; height: 12px; border-radius: 2px; border: 1.3px solid rgba(42,35,29,0.35);
+    display: inline-flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 10px; line-height: 1; color: transparent;
+  }
+  .wit-pill.checked { background: #25211e; border-color: #25211e; color: #f7f3eb; }
+  .wit-pill.checked .box { background: #d95348; border-color: #d95348; color: #fff; }
+
+  .composer-foot { display: flex; align-items: center; margin-top: 13px; gap: 10px; }
   .search-submit {
-    flex: 1; background: var(--cinnabar); color: #fcf9f2; border: none; padding: 8px 14px;
-    border-radius: 3px; font-family: var(--serif); font-size: 13.5px; font-weight: 600;
-    letter-spacing: 0.1em; cursor: pointer;
+    flex: 1; background: var(--cinnabar); color: #fcf9f2; border: none; padding: 10px 14px;
+    border-radius: 4px; font-family: var(--serif); font-size: 14.5px; font-weight: 600; letter-spacing: 0.1em;
   }
   .search-submit:hover { background: #8e261d; }
-  .sub-btn {
-    background: transparent; color: var(--sumi-soft); border: 1px solid rgba(42, 35, 29, 0.18);
-    padding: 7px 10px; border-radius: 3px; font-family: var(--sans); font-size: 11.5px; cursor: pointer; white-space: nowrap;
-  }
-  .sub-btn:hover { border-color: var(--sumi); color: var(--sumi); background: rgba(42,35,29,0.04); }
+  .search-submit:disabled { background: #b9aea2; cursor: default; }
+  .kbd-hint { font-family: var(--sans); font-size: 11.5px; color: var(--stone); white-space: nowrap; }
 
   .apparatus-scroll { flex: 1; overflow-y: auto; padding: 14px 18px 32px; }
   .meta-strip {
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: var(--sans); font-size: 11.5px; color: var(--stone);
+    display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    font-family: var(--sans); font-size: 12px; color: var(--stone);
     padding-bottom: 9px; margin-bottom: 12px; border-bottom: 1px solid var(--hairline);
   }
+  .export-links { display: inline-flex; gap: 9px; align-items: baseline; }
+  .notice { font-family: var(--sans); font-size: 13px; color: var(--sumi-soft); line-height: 1.7; padding: 6px 2px; }
+  .notice .sub-btn { margin-top: 8px; }
 
-  .app-entry {
-    background: var(--washi-pure); border: 1px solid var(--hairline); border-radius: 3px; margin-bottom: 15px;
-  }
-  .app-entry.active-entry {
-    border-color: rgba(168, 50, 40, 0.4); box-shadow: 0 4px 16px rgba(28, 25, 23, 0.05);
-  }
+  .app-entry { background: var(--washi-pure); border: 1px solid var(--hairline); border-radius: 4px; margin-bottom: 15px; overflow: hidden; }
+  .app-entry.active-entry { border-color: rgba(168, 50, 40, 0.45); box-shadow: 0 4px 16px rgba(28, 25, 23, 0.06); }
   .app-head {
     padding: 9px 13px; border-bottom: 1px solid var(--hairline);
     display: flex; justify-content: space-between; align-items: center; gap: 10px;
-    background: rgba(237, 231, 220, 0.38);
+    background: rgba(237, 231, 220, 0.45);
   }
   .app-lemma { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
-  .app-idx { font-family: "Georgia", serif; font-size: 11.5px; color: var(--cinnabar); font-style: italic; }
+  .app-idx { font-family: "Georgia", serif; font-size: 12px; color: var(--cinnabar); font-style: italic; }
   .app-qtext { font-size: 14.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .btn-parallel {
-    flex-shrink: 0; border: 1px solid rgba(168, 50, 40, 0.42); background: transparent;
-    color: var(--cinnabar); font-family: var(--sans); font-size: 11px; padding: 3px 9px; border-radius: 2px; cursor: pointer;
+    flex-shrink: 0; border: 1px solid rgba(168, 50, 40, 0.45); background: transparent;
+    color: var(--cinnabar); font-family: var(--sans); font-size: 12px; padding: 4px 10px; border-radius: 3px;
   }
-  .btn-parallel:hover, .app-entry.active-entry .btn-parallel {
-    background: var(--cinnabar); color: #fff; border-color: var(--cinnabar);
-  }
+  .btn-parallel:hover, .app-entry.active-entry .btn-parallel { background: var(--cinnabar); color: #fff; border-color: var(--cinnabar); }
 
   .rdg-table { width: 100%; border-collapse: collapse; }
-  .rdg-row { border-bottom: 1px solid rgba(42, 35, 29, 0.06); cursor: pointer; }
+  .rdg-row { border-bottom: 1px solid rgba(42, 35, 29, 0.07); cursor: pointer; }
   .rdg-row:last-child { border-bottom: none; }
-  .rdg-row:hover { background: rgba(196, 138, 36, 0.06); }
-  .rdg-row.focused { background: rgba(168, 50, 40, 0.055); }
+  .rdg-row:hover { background: rgba(196, 138, 36, 0.07); }
+  .rdg-row.focused { background: rgba(168, 50, 40, 0.07); box-shadow: inset 3px 0 0 var(--cinnabar); }
+  .rdg-row.is-missing { cursor: default; }
+  .rdg-row.is-missing:hover { background: transparent; }
   .rdg-wit { width: 84px; vertical-align: top; padding: 10px 8px 10px 13px; white-space: nowrap; }
   .wit-stamp {
-    display: inline-block; font-size: 12px; font-weight: 700; color: var(--cinnabar);
-    border: 1px solid rgba(168, 50, 40, 0.38); padding: 0 5px; border-radius: 2px; background: rgba(168, 50, 40, 0.04);
+    display: inline-block; font-size: 12.5px; font-weight: 700; color: var(--cinnabar);
+    border: 1px solid rgba(168, 50, 40, 0.4); padding: 0 5px; border-radius: 2px; background: rgba(168, 50, 40, 0.04);
   }
-  .wit-stamp.is-aligned {
-    color: #195a7a; border-color: rgba(25, 90, 122, 0.42); background: rgba(56, 189, 248, 0.09);
-  }
-  .wit-folio { display: block; font-family: var(--sans); font-size: 10.5px; color: var(--stone); margin-top: 4px; }
-  .rdg-text { padding: 9px 13px 10px 4px; font-size: 14.8px; line-height: 1.7; letter-spacing: 0.03em; }
-  .rdg-text .ctx { color: #a3998d; font-size: 13.5px; }
-  .rdg-text .ch-diff {
-    color: #8f4f06; background: var(--kin-wash);
-    border-bottom: 1.5px solid rgba(176, 116, 24, 0.65); padding: 0 1px;
-  }
-  .rdg-text .ch-aligned {
-    color: #14506e; background: rgba(56, 189, 248, 0.14);
-    border-bottom: 1.5px dashed rgba(25, 90, 122, 0.7); padding: 0 1px;
-  }
+  .wit-stamp.is-aligned { color: #195a7a; border-color: rgba(25, 90, 122, 0.45); background: rgba(56, 189, 248, 0.09); }
+  .wit-stamp.is-missing { color: #9a9086; border-color: rgba(42, 35, 29, 0.18); background: transparent; font-weight: 500; }
+  .wit-folio { display: block; font-family: var(--sans); font-size: 11.5px; color: var(--stone); margin-top: 4px; }
+  .rdg-text { padding: 9px 13px 10px 4px; font-size: 15px; line-height: 1.7; letter-spacing: 0.03em; }
+  .rdg-text.miss { font-family: var(--sans); font-size: 12.5px; color: #9a9086; letter-spacing: 0; }
+  .rdg-text .ctx { color: #9d9387; font-size: 13.5px; }
+  .rdg-text .ch-diff { color: #8f4f06; background: var(--kin-wash); border-bottom: 1.5px solid rgba(176, 116, 24, 0.7); padding: 0 1px; }
+  .rdg-text .ch-aligned { color: #14506e; background: rgba(56, 189, 248, 0.14); border-bottom: 1.5px dashed rgba(25, 90, 122, 0.7); padding: 0 1px; }
   .rdg-align-badge {
     display: inline-block; margin-right: 6px; padding: 0 5px; border-radius: 2px;
-    font-family: var(--sans); font-size: 10.5px; color: #195a7a;
-    border: 1px dashed rgba(25, 90, 122, 0.45); background: rgba(56, 189, 248, 0.08);
-    vertical-align: baseline;
+    font-family: var(--sans); font-size: 11px; color: #195a7a; letter-spacing: 0;
+    border: 1px dashed rgba(25, 90, 122, 0.45); background: rgba(56, 189, 248, 0.08); vertical-align: baseline;
   }
   .rdg-banxin {
-    display: inline-block; margin-left: 6px; font-family: var(--sans); font-size: 10.5px;
+    display: inline-block; margin-left: 6px; font-family: var(--sans); font-size: 11px; letter-spacing: 0;
     color: var(--stone); border-left: 1px solid var(--hairline); padding-left: 6px;
   }
 
   .catalog-list { flex: 1; overflow-y: auto; padding: 15px 18px 30px; }
   .cat-item {
-    background: var(--washi-pure); border: 1px solid var(--hairline); border-radius: 3px;
+    background: var(--washi-pure); border: 1px solid var(--hairline); border-radius: 4px;
     padding: 13px 14px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; gap: 10px;
   }
-  .cat-title { font-size: 15px; font-weight: 700; margin: 0 0 4px; display: flex; align-items: center; gap: 8px; }
+  .cat-title { font-size: 15.5px; font-weight: 700; margin: 0 0 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .cat-id { font-family: "SF Mono", Menlo, monospace; font-size: 11px; color: var(--stone); font-weight: 400; }
-  .cat-desc { margin: 0; font-size: 12.5px; color: var(--sumi-soft); }
-  .cat-meta { margin-top: 6px; font-family: var(--sans); font-size: 11px; color: var(--stone); display: flex; gap: 10px; flex-wrap: wrap; }
+  .cat-desc { margin: 0; font-size: 13px; color: var(--sumi-soft); line-height: 1.6; }
+  .cat-meta { margin-top: 7px; font-family: var(--sans); font-size: 12px; color: var(--stone); display: flex; gap: 12px; flex-wrap: wrap; }
   .cat-meta a { color: var(--cinnabar); text-decoration: none; }
   .cat-meta a:hover { text-decoration: underline; }
+  .sub-btn {
+    background: transparent; color: var(--sumi-soft); border: 1px solid rgba(42, 35, 29, 0.25);
+    padding: 7px 12px; border-radius: 4px; font-family: var(--sans); font-size: 12.5px; white-space: nowrap; flex-shrink: 0;
+  }
+  .sub-btn:hover { border-color: var(--sumi); color: var(--sumi); background: rgba(42,35,29,0.04); }
 
+  /* ---------- 原页影像区 ---------- */
   .gallery-stage { flex: 1; display: flex; flex-direction: column; background: var(--stage-bg); min-width: 0; }
   .stage-bar {
-    height: 35px; background: #161412; color: #9c9286; padding: 0 14px;
-    display: flex; align-items: center; justify-content: space-between;
-    font-family: var(--sans); font-size: 11.5px; border-bottom: 1px solid var(--stage-border);
+    min-height: 42px; background: #161412; color: #a89e92; padding: 5px 14px;
+    display: flex; align-items: center; justify-content: space-between; gap: 6px 14px; flex-wrap: wrap;
+    font-family: var(--sans); font-size: 12.5px; border-bottom: 1px solid var(--stage-border); flex-shrink: 0;
   }
-  .legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 1px; margin-right: 4px; vertical-align: middle; }
+  .stage-caption { flex: 1 1 180px; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #cfc6b9; }
+  .stage-tools { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .legend { display: inline-flex; gap: 11px; align-items: center; white-space: nowrap; }
+  .legend > span { cursor: help; }
+  .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 1px; margin-right: 5px; vertical-align: -1px; }
   .legend-same { border: 1.5px solid #d1483e; background: rgba(209,72,62,0.18); }
-  .legend-diff { border: 1.5px solid #e09f3e; background: rgba(224,159,62,0.25); }
+  .legend-diff { border: 1.5px solid #e09f3e; background: rgba(224,159,62,0.3); }
   .legend-aligned { border: 1.5px dashed #38bdf8; background: rgba(56,189,248,0.20); }
 
-  .windows-grid { flex: 1; display: grid; gap: 1px; background: #26221e; min-height: 0; }
-  .windows-grid.cols-1 { grid-template-columns: 1fr; }
-  .windows-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
-  .windows-grid.cols-auto {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-auto-rows: minmax(250px, 1fr);
+  .win-tabs { display: none; gap: 2px; padding: 5px 10px; background: #1b1917; border-bottom: 1px solid var(--stage-border); overflow-x: auto; flex-shrink: 0; }
+  .gallery-stage.single .win-tabs:not(:empty) { display: flex; }
+  .win-tab {
+    border: 1px solid transparent; background: transparent; color: #a89e92; font-family: var(--serif); font-size: 13.5px;
+    padding: 4px 12px; border-radius: 4px; white-space: nowrap;
   }
+  .win-tab:hover { color: #fff; }
+  .win-tab.active { background: rgba(245, 238, 226, 0.14); color: #fff; font-weight: 700; border-color: rgba(255,255,255,0.14); }
+  .win-tab.is-aligned::after { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #38bdf8; margin-left: 6px; vertical-align: 2px; }
 
-  .iiif-win { position: relative; background: var(--stage-card); overflow: hidden; display: flex; flex-direction: column; }
+  .windows-grid { flex: 1; display: grid; gap: 1px; background: #26221e; min-height: 0; position: relative; }
+  .windows-grid.cols-2 { grid-template-columns: repeat(2, 1fr); grid-auto-rows: minmax(0, 1fr); }
+  .windows-grid.cols-auto { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); grid-auto-rows: minmax(0, 1fr); }
+  .windows-grid.cols-1 { display: block; }
+  .windows-grid.cols-1 .iiif-win { position: absolute; inset: 0; visibility: hidden; }
+  .windows-grid.cols-1 .iiif-win.is-active { visibility: visible; }
+
+  .iiif-win { position: relative; background: var(--stage-card); overflow: hidden; display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+  .iiif-win.flash::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 20;
+    box-shadow: inset 0 0 0 2px #e0a23e; animation: winflash 1.1s ease-out forwards;
+  }
+  @keyframes winflash { 0%, 55% { opacity: 1; } 100% { opacity: 0; } }
+
   .win-hud {
-    position: absolute; top: 9px; left: 9px; right: 9px; z-index: 10;
-    height: 33px; padding: 0 10px; border-radius: 4px;
-    background: rgba(20, 18, 16, 0.78); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 248, 235, 0.11);
-    display: flex; align-items: center; justify-content: space-between;
-    color: #ede6da; font-family: var(--sans); font-size: 11.5px;
+    min-height: 38px; padding: 3px 6px 3px 12px; flex-shrink: 0;
+    background: #1f1c19; border-bottom: 1px solid var(--stage-border);
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    color: #ede6da; font-family: var(--sans); font-size: 12px;
   }
-  .win-label { display: flex; align-items: center; gap: 7px; min-width: 0; }
-  .win-ed { font-family: var(--serif); font-size: 13.5px; font-weight: 700; color: #f7f2e8; }
+  .win-label { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .win-ed { font-family: var(--serif); font-size: 14.5px; font-weight: 700; color: #f7f2e8; white-space: nowrap; }
   .win-align-pill {
-    font-family: var(--sans); font-size: 10px; color: #7dd3fc;
+    font-family: var(--sans); font-size: 11px; color: #7dd3fc;
     border: 1px dashed rgba(125, 211, 252, 0.55); background: rgba(56, 189, 248, 0.13);
-    padding: 0 5px; border-radius: 2px; white-space: nowrap;
+    padding: 0 6px; border-radius: 2px; white-space: nowrap;
   }
-  .win-banxin { color: #cbb693; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; }
-
-  .win-nav { display: flex; align-items: center; gap: 2px; flex-shrink: 0; }
+  .win-banxin { color: #cbb693; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .win-nav { display: flex; align-items: center; gap: 1px; flex-shrink: 0; }
   .hud-btn {
-    border: none; background: transparent; color: #c7beb2; padding: 3px 6px;
-    border-radius: 3px; font-size: 11px; cursor: pointer; text-decoration: none;
+    border: none; background: transparent; color: #d0c7bb; min-width: 28px; height: 28px; padding: 0 7px;
+    border-radius: 4px; font-size: 14px; line-height: 28px; text-decoration: none; text-align: center; font-family: var(--sans);
   }
-  .hud-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+  .hud-btn.txt { font-size: 12px; }
+  .hud-btn:hover { background: rgba(255,255,255,0.13); color: #fff; }
+  .hud-sep { width: 1px; height: 16px; background: rgba(255,255,255,0.14); margin: 0 4px; }
   .hud-pno {
-    width: 40px; background: rgba(0,0,0,0.38); color: #f5efe6; border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 2px; padding: 1px 3px; text-align: center; font-size: 11px; font-family: monospace;
+    width: 46px; height: 24px; background: rgba(0,0,0,0.4); color: #f5efe6; border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 3px; padding: 0 3px; text-align: center; font-size: 12px; font-family: "SF Mono", Menlo, monospace;
   }
-  .hud-total { color: #857c70; font-size: 10.5px; margin-right: 2px; font-family: monospace; }
-  .osd-mount { flex: 1; width: 100%; height: 100%; }
+  .osd-wrap { flex: 1; position: relative; min-height: 0; }
+  .osd-mount { position: absolute; inset: 0; }
+  .win-status {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 5; pointer-events: none;
+    color: #8f867a; font-family: var(--sans); font-size: 13px; background: rgba(17,16,15,0.7); padding: 5px 12px; border-radius: 4px;
+  }
+  .win-status[hidden] { display: none; }
 
-  .iiif-box-exact {
-    border: 1.4px solid rgba(209, 67, 56, 0.86); background: rgba(209, 67, 56, 0.07); border-radius: 1px;
-  }
-  .iiif-box-var {
-    border: 1.7px solid rgba(226, 158, 46, 0.95); background: rgba(226, 158, 46, 0.17);
-    border-radius: 1px; box-shadow: 0 0 6px rgba(226, 158, 46, 0.22);
-  }
-  .iiif-box-aligned {
-    border: 1.8px dashed rgba(56, 189, 248, 0.95); background: rgba(56, 189, 248, 0.12);
-    border-radius: 2px; box-shadow: 0 0 7px rgba(56, 189, 248, 0.24);
-  }
+  .iiif-box-exact { border: 1.4px solid rgba(209, 67, 56, 0.86); background: rgba(209, 67, 56, 0.07); border-radius: 1px; }
+  .iiif-box-var { border: 1.7px solid rgba(226, 158, 46, 0.95); background: rgba(226, 158, 46, 0.17); border-radius: 1px; box-shadow: 0 0 6px rgba(226, 158, 46, 0.22); }
+  .iiif-box-aligned { border: 1.8px dashed rgba(56, 189, 248, 0.95); background: rgba(56, 189, 248, 0.12); border-radius: 2px; box-shadow: 0 0 7px rgba(56, 189, 248, 0.24); }
   .hide-boxes .iiif-box-exact, .hide-boxes .iiif-box-var, .hide-boxes .iiif-box-aligned { opacity: 0 !important; pointer-events: none; }
-  .stage-placeholder { margin: auto; text-align: center; color: #786f64; font-size: 14px; letter-spacing: 0.06em; }
+  .stage-placeholder {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+    text-align: center; color: #8f867a; font-size: 14px; letter-spacing: 0.04em; padding: 20px; background: var(--stage-bg);
+  }
+  .stage-placeholder .ghost-action { font-size: 13px; }
+
+  /* ---------- 使用说明 ---------- */
+  dialog#helpDialog {
+    border: none; border-radius: 8px; padding: 0; width: min(600px, calc(100vw - 28px)); max-height: calc(100dvh - 40px);
+    background: var(--washi-pure); color: var(--sumi); box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+  }
+  dialog#helpDialog::backdrop { background: rgba(15, 13, 11, 0.6); }
+  .help-head {
+    display: flex; justify-content: space-between; align-items: center; padding: 14px 20px;
+    border-bottom: 1px solid var(--hairline); position: sticky; top: 0; background: var(--washi-pure);
+  }
+  .help-head h2 { margin: 0; font-size: 17px; letter-spacing: 0.06em; }
+  .help-body { padding: 6px 20px 20px; font-family: var(--sans); font-size: 13.5px; line-height: 1.8; color: var(--sumi-soft); }
+  .help-body h3 { font-family: var(--serif); font-size: 14.5px; color: var(--sumi); margin: 16px 0 4px; }
+  .help-body p, .help-body ol, .help-body ul { margin: 0 0 4px; }
+  .help-body ol, .help-body ul { padding-left: 1.4em; }
+  .help-body a { color: var(--cinnabar); }
+  .help-body kbd { font-family: "SF Mono", Menlo, monospace; font-size: 12px; border: 1px solid rgba(42,35,29,0.25); border-radius: 3px; padding: 0 5px; background: #fff; }
+  .help-body .legend-dot { margin-right: 6px; }
+
+  /* ---------- 手机底部切换 ---------- */
+  .mobile-tabs { display: none; }
+
+  @media (max-width: 1180px) {
+    .drawer { width: 390px; }
+    .legend .lg-text { display: none; }
+    .legend-dot { margin-right: 0; }
+  }
+
+  @media (max-width: 820px) {
+    header { padding: 0 12px; gap: 8px; }
+    .pilot-tag { display: none; }
+    .brand-title { font-size: 14.5px; letter-spacing: 0.04em; }
+    .seg-btn { padding: 5px 8px; }
+    .ghost-action { padding: 5px 8px; }
+    .drawer, .gallery-stage { position: absolute; inset: 0; width: auto; border-right: none; }
+    body:not(.m-stage) .gallery-stage, body:not(.m-stage) .gallery-stage * { visibility: hidden !important; }
+    body.m-stage .drawer, body.m-stage .drawer * { visibility: hidden !important; }
+    #pane-search.active { display: block; overflow-y: auto; }
+    .apparatus-scroll { overflow: visible; }
+    .kbd-hint, #layoutGroup { display: none; }
+    .stage-bar { padding: 5px 10px; }
+    .mobile-tabs { display: flex; flex-shrink: 0; background: #161412; border-top: 1px solid rgba(198, 173, 138, 0.22); padding-bottom: env(safe-area-inset-bottom); }
+    .mobile-tabs button {
+      flex: 1; border: none; background: transparent; color: #a89e92; font-family: var(--sans); font-size: 13.5px; padding: 12px 6px;
+      border-top: 2px solid transparent;
+    }
+    .mobile-tabs button.active { color: #fff; font-weight: 600; border-top-color: #d95348; }
+  }
 </style>
 </head>
 <body>
 
 <header>
   <div class="brand">
-    <span class="seal-mark">紅樓</span>
-    <span class="brand-title" id="uiTitle">红楼梦诸本对校 · IIIF 善本影像检索</span>
-    <span class="pilot-tag" id="uiPilotBadge">先行公开示范版</span>
+    <span class="seal-mark" aria-hidden="true">紅樓</span>
+    <h1 class="brand-title" data-tx="title"></h1>
+    <span class="pilot-tag" data-tx="pilot"></span>
   </div>
-
   <div class="nav-bar">
-    <div class="seg-group">
-      <button class="seg-btn active" id="tabSearchBtn" onclick="switchDrawer('search', this)">诸本对校检索</button>
-      <button class="seg-btn" id="tabShelfBtn" onclick="switchDrawer('shelf', this)">IIIF 善本书架</button>
-    </div>
-
-    <div class="seg-group">
-      <button class="seg-btn active" id="colAutoBtn" onclick="setCols('auto', this)">诸本并观</button>
-      <button class="seg-btn" id="col2Btn" onclick="setCols('2', this)">双窗对读</button>
-      <button class="seg-btn" id="col1Btn" onclick="setCols('1', this)">单页细读</button>
-    </div>
-
-    <button class="ghost-action" id="boxBtn" onclick="toggleBoxes()">显示字框 [B]</button>
-    <a class="ghost-action" id="miradorTopLink" href="#" target="_blank">Mirador 3 ↗</a>
-    <a class="ghost-action" id="iiifColLink" href="#" target="_blank">IIIF v3</a>
-
-    <div class="seg-group">
+    <button class="ghost-action" onclick="openHelp()" data-tx="help"></button>
+    <div class="seg-group" role="group" aria-label="Language">
       <button class="seg-btn" id="langZh" onclick="setLang('zh')" lang="zh-CN">简体中文</button>
       <button class="seg-btn" id="langJa" onclick="setLang('ja')" lang="ja">日本語</button>
     </div>
@@ -309,25 +372,33 @@
 
 <div class="workspace">
   <aside class="drawer" id="leftDrawer">
+    <div class="drawer-tabs">
+      <button class="dtab active" id="tabSearchBtn" onclick="switchDrawer('search')" data-tx="tabSearch"></button>
+      <button class="dtab" id="tabShelfBtn" onclick="switchDrawer('shelf')" data-tx="tabShelf"></button>
+    </div>
+
     <div class="pane active" id="pane-search">
-      <div class="scope-notice" id="scopeNotice"></div>
       <div class="composer">
-        <div class="composer-top">
-          <span class="composer-title" id="composerLabel"></span>
-          <div class="preset-bar" id="presetBar"></div>
-        </div>
+        <p class="intro"><span data-tx="intro"></span> <button class="link-btn" onclick="openHelp()" data-tx="introMore"></button></p>
+        <label class="field-label" for="queriesInput" data-tx="composerLabel"></label>
         <textarea id="queriesInput" spellcheck="false">细看形容与众各别，两弯似蹙非蹙罥烟眉，一双似喜非喜含情目，态生两靥之愁，娇袭一身之病
 自荣公死后，长子贾代善袭了官，娶的也是金陵世勋史侯家的小姐为妻，生了两个儿子
 假作真时真亦假，无为有处有还无
 话说贾元春自那日幸大观园回宫去后，便命将那所有的题咏命探春依次抄录妥协</textarea>
-        <div class="witness-bar" id="witnessBar"></div>
+        <div class="preset-row">
+          <span data-tx="presetLabel"></span>
+          <div class="preset-bar" id="presetBar"></div>
+        </div>
+        <div class="wit-block">
+          <span class="field-label" data-tx="witLabel"></span>
+          <div class="witness-bar" id="witnessBar"></div>
+        </div>
         <div class="composer-foot">
-          <button class="search-submit" id="searchBtn" onclick="executeBatchSearch()"></button>
-          <button class="sub-btn" id="annoExportBtn" onclick="exportWebAnnotation()" title="W3C Web Annotation JSON-LD">JSON-LD</button>
-          <button class="sub-btn" id="csvExportBtn" onclick="exportCSV()">CSV</button>
+          <button class="search-submit" id="searchBtn" onclick="executeBatchSearch()" data-tx="searchBtn" disabled></button>
+          <span class="kbd-hint">Ctrl / ⌘ + Enter</span>
         </div>
       </div>
-      <div class="apparatus-scroll" id="apparatusList"></div>
+      <div class="apparatus-scroll" id="apparatusList" aria-live="polite"></div>
     </div>
 
     <div class="pane" id="pane-shelf">
@@ -337,74 +408,184 @@
 
   <main class="gallery-stage" id="galleryStage">
     <div class="stage-bar">
-      <div id="stageCaption"></div>
-      <div>
-        <span><i class="legend-dot legend-same"></i><span id="legSame"></span></span>
-        <span style="margin-left:12px"><i class="legend-dot legend-diff"></i><span id="legDiff"></span></span>
-        <span style="margin-left:12px"><i class="legend-dot legend-aligned"></i><span id="legAligned"></span></span>
+      <div class="stage-caption" id="stageCaption"></div>
+      <div class="stage-tools">
+        <div class="legend">
+          <span data-t="legSameFull"><i class="legend-dot legend-same"></i><span class="lg-text" data-tx="legSame"></span></span>
+          <span data-t="legDiffFull"><i class="legend-dot legend-diff"></i><span class="lg-text" data-tx="legDiff"></span></span>
+          <span data-t="legAlignedFull"><i class="legend-dot legend-aligned"></i><span class="lg-text" data-tx="legAligned"></span></span>
+        </div>
+        <div class="seg-group" id="layoutGroup">
+          <button class="seg-btn active" data-cols="auto" onclick="setCols('auto')" data-tx="colAuto" data-t="colAutoTip"></button>
+          <button class="seg-btn" data-cols="2" onclick="setCols('2')" data-tx="col2" data-t="col2Tip"></button>
+          <button class="seg-btn" data-cols="1" onclick="setCols('1')" data-tx="col1" data-t="col1Tip"></button>
+        </div>
+        <button class="ghost-action" id="boxBtn" onclick="toggleBoxes()" data-t="boxTip"></button>
       </div>
     </div>
+    <div class="win-tabs" id="winTabs"></div>
     <div class="windows-grid cols-auto" id="windowsGrid">
-      <div class="stage-placeholder" id="loadingStage">正在加载影像…</div>
+      <div class="stage-placeholder" id="loadingStage" data-tx="loadingData"></div>
     </div>
   </main>
 </div>
+
+<nav class="mobile-tabs">
+  <button id="mTabSearch" class="active" onclick="setMobileView('search')" data-tx="mSearch"></button>
+  <button id="mTabStage" onclick="setMobileView('stage')" data-tx="mStage"></button>
+</nav>
+
+<dialog id="helpDialog" aria-labelledby="helpTitle">
+  <div class="help-head">
+    <h2 id="helpTitle" data-tx="helpTitle"></h2>
+    <button class="sub-btn" onclick="document.getElementById('helpDialog').close()" data-tx="helpClose"></button>
+  </div>
+  <div class="help-body" id="helpBody"></div>
+</dialog>
 
 <script>
 const I18N = {
   zh: {
     title: "红楼梦诸本对校 · IIIF 善本影像检索",
     pilot: "先行公开示范版",
-    tabSearch: "诸本对校检索",
-    tabShelf: "IIIF 善本书架（5种）",
+    help: "使用说明",
+    tabSearch: "查句对校",
+    tabShelf: "底本书架（5 种）",
     colAuto: "诸本并观", col2: "双窗对读", col1: "单页细读",
-    boxBtn: "显示字框 [B]",
-    scope: "公开检索范围为第 1 至 3 回、第 23 至 24 回。五种底本的全卷影像共 3,744 页。",
-    composerLabel: "批量检索词句（每行一条，支持简繁汉字、日文新字体和清抄本俗字）",
+    colAutoTip: "所有命中的底本并排显示",
+    col2Tip: "每行两种底本",
+    col1Tip: "一次只看一种底本，用上方标签切换",
+    boxOn: "字框：开", boxOff: "字框：关",
+    boxTip: "显示或隐藏原图上的字框（快捷键 B）",
+    intro: "输入《红楼梦》里的一句话，同时打开五种清代抄本的对应原页，并在影印原图上逐字标出。目前可检索第 1–3 回、第 23–24 回。",
+    introMore: "使用说明",
+    composerLabel: "要查的词句（每行一条，可一次查多条）",
+    placeholder: "例如：两弯似蹙非蹙罥烟眉\n简体、繁体、日文汉字都可以",
+    presetLabel: "试试：",
     presets: ["宝黛初见", "异文/误识对页", "冷子兴演说", "太虚幻境联", "元春题咏", "批量词汇"],
+    witLabel: "在这些底本中查找",
     searchBtn: "检索各本原页",
-    statFmt: (q, dCnt, aCnt, ms) => aCnt > 0
-      ? `检索 ${q} 条 · 原文命中 ${dCnt} 处 + 对应页定位 ${aCnt} 处 · 用时 ${ms} ms`
-      : `检索 ${q} 条 · 命中 ${dCnt} 处 · 用时 ${ms} ms`,
+    emptyInput: "请先输入要查的词句，或点上面的示例。",
+    loadingData: "正在加载检索数据…",
+    loadFail: "检索数据加载失败，请检查网络后重试。",
+    retry: "重试",
+    statFmt: (q, dCnt, aCnt) => aCnt > 0
+      ? `共 ${q} 条 · 原文命中 ${dCnt} 处，另据上下文定位 ${aCnt} 处`
+      : `共 ${q} 条 · 原文命中 ${dCnt} 处`,
+    exportLabel: "导出",
+    exportCsvTip: "引证表（CSV，可用 Excel 打开），含底本、页码与 IIIF 定位链接",
+    exportAnnoTip: "W3C Web Annotation（JSON-LD），可导入 IIIF 阅览器",
     parallelBtn: (n) => `诸本并观 (${n})`,
-    noHit: "公开选页中未检索到此句",
+    noHit: "所选底本的公开范围内没有找到这一句。可以换一个短一些的片段再试。",
+    missing: "未检出（此本缺该回，或该处不在公开范围内）",
     folioFmt: (p) => `第 ${p} 页`,
-    openBook: "展卷",
-    legSame: "红框：同字定位",
-    legDiff: "金框：异文或俗字",
-    legAligned: "蓝虚框：对应页定位（据上下文锚点）",
-    alignBadge: (via, p) => `对应页定位 · 据${via.replace(/本$/, '')}p.${p}锚点`,
-    alignHud: "对应页定位",
-    loading: "正在加载影像…", focus: "定位到命中位置", mirador: "在 Mirador 中打开",
+    openBook: "打开原页",
+    legSame: "同字", legDiff: "异文", legAligned: "推定对应",
+    legSameFull: "红框：与检索句相同的字（繁简、异体视为同字）",
+    legDiffFull: "金框：与检索句不同的字（异文，或 OCR 误识）",
+    legAlignedFull: "蓝虚框：字面未命中，据其他底本的上下文推定的对应位置",
+    alignBadge: (via, p) => `推定对应 · 据${via.replace(/本$/, '')}本第 ${p} 页`,
+    alignHud: "推定对应页",
+    loading: "正在加载影像…", imgFail: "影像加载失败",
+    focus: "回到命中位置", mirador: "在 Mirador 中打开整本",
+    prevLeaf: "上一页", nextLeaf: "下一页", zoomIn: "放大", zoomOut: "缩小", pageInput: "输入 PDF 页序后回车跳转",
+    mSearch: "检索与结果", mStage: "原页影像",
     stageIdle: "原页浏览",
-    stageParallel: (q, n) => `对校句「${q}」 · 已打开 ${n} 种底本原页`
+    stageParallel: (q, n) => `「${q}」 · ${n} 种底本`,
+    helpTitle: "使用说明",
+    helpClose: "关闭",
+    helpHtml: (col, mir) => `
+      <h3>这是什么</h3>
+      <p>五种清代《红楼梦》（石头记）抄本的影印原页检索：甲戌本、己卯本、庚辰本、舒序本、郑藏本。输入一句话，即可并排打开各本对应的原页，并在原图上逐字标框，直接比较各本异文。</p>
+      <h3>怎么用</h3>
+      <ol>
+        <li>在左侧输入词句，每行一条；简体、繁体、日文新字体都能查到抄本原字。</li>
+        <li>点「检索各本原页」。点结果中的任意一行，右侧会定位到该本的原页。</li>
+        <li>在原图上滚轮缩放、拖动平移；<kbd>‹</kbd> <kbd>›</kbd> 翻页，<kbd>⌖</kbd> 回到命中位置，<kbd>B</kbd> 键开关字框。</li>
+      </ol>
+      <h3>三种框的含义</h3>
+      <ul style="list-style:none;padding-left:0">
+        <li><i class="legend-dot legend-same"></i>红框：与检索句相同的字（繁简、异体视为同字）</li>
+        <li><i class="legend-dot legend-diff"></i>金框：与检索句不同的字，即异文，也可能是 OCR 误识</li>
+        <li><i class="legend-dot legend-aligned"></i>蓝虚框：该本字面未命中，系统依据其他底本的前后文推定的对应位置</li>
+      </ul>
+      <h3>公开范围</h3>
+      <p>本示范版可检索第 1–3 回与第 23–24 回（共 462 页）。底本缺回时显示「未检出」：甲戌本缺第 23–24 回，己卯本缺第 23–24 回，郑藏本仅存第 23–24 回。</p>
+      <h3>请注意</h3>
+      <p>文字为机器识别（OCR）结果，尚未逐页人工校对；引用时请以原图为准。</p>
+      <h3>开放数据</h3>
+      <p>各本影像以 IIIF Presentation v3 公开：<a href="${col}" target="_blank" rel="noopener">IIIF Collection ↗</a> · <a href="${mir}" target="_blank" rel="noopener">在 Mirador 3 中打开 ↗</a>。检索结果可在结果列表上方导出为 CSV 引证表或 W3C Web Annotation（JSON-LD）。</p>`
   },
   ja: {
-    title: "紅樓夢諸本對校 · IIIF 善本画像検索システム",
+    title: "紅樓夢諸本對校 · IIIF 善本画像検索",
     pilot: "先行公開パイロット版",
-    tabSearch: "諸本横断検索",
-    tabShelf: "IIIF 善本書架 (5種)",
-    colAuto: "諸本並観", col2: "二窓対照", col1: "単葉精覧",
-    boxBtn: "字枠表示 [B]",
-    scope: "【先行公開範囲】文字列・字枠横断検索は「第一回〜第三回・第二十三回〜第二十四回」を収録。五種古鈔本（全3,744葉・パブリックドメイン）の IIIF v3 画像マニフェストは全巻公開済。",
-    composerLabel: "一括検索クエリ（1行1件 ・ 繁体字／簡体字／日本新字体／異体字対応）",
-    presets: ["宝黛初見", "異文・誤読対照", "冷子興演説", "太虚幻境対聯", "大観園題詠", "語彙一括"],
-    searchBtn: "諸本原葉を一括検索",
-    statFmt: (q, dCnt, aCnt, ms) => aCnt > 0
-      ? `検索 ${q} 件 · 原文一致 ${dCnt} 箇所 + 対応葉推定 ${aCnt} 箇所 · ${ms} ms`
-      : `検索クエリ ${q} 件 · 原葉ヒット ${dCnt} 箇所 · ${ms} ms`,
-    parallelBtn: (n) => `諸本並観 (${n})`,
-    noHit: "公開対象回に該当なし（または当該鈔本の欠回）",
+    help: "使い方",
+    tabSearch: "本文検索・対校",
+    tabShelf: "底本一覧（5種）",
+    colAuto: "諸本並列", col2: "二窓対照", col1: "一葉精覧",
+    colAutoTip: "ヒットした全ての底本を並べて表示",
+    col2Tip: "一行に二種ずつ表示",
+    col1Tip: "一種ずつ表示（上部のタブで切替）",
+    boxOn: "字枠：表示", boxOff: "字枠：非表示",
+    boxTip: "原本画像上の字枠の表示切替（ショートカット B）",
+    intro: "『紅楼夢』の一節を入力すると、清代の古鈔本五種の該当葉を同時に開き、影印画像上に一字ずつ枠で示します。現在、第1〜3回・第23〜24回が検索できます。",
+    introMore: "使い方",
+    composerLabel: "検索する語句（1行に1件、複数行で一括検索）",
+    placeholder: "例：両弯似蹙非蹙罥煙眉\n繁体字・簡体字・日本の新字体のいずれでも検索できます",
+    presetLabel: "例：",
+    presets: ["宝黛初見", "異文・誤読対照", "冷子興演説", "太虚幻境対聯", "元春題詠", "語彙一括"],
+    witLabel: "検索対象の底本",
+    searchBtn: "諸本の原葉を検索",
+    emptyInput: "検索する語句を入力するか、上の例を選んでください。",
+    loadingData: "検索データを読み込み中…",
+    loadFail: "検索データを読み込めませんでした。通信環境を確認して再試行してください。",
+    retry: "再試行",
+    statFmt: (q, dCnt, aCnt) => aCnt > 0
+      ? `${q} 件 · 本文一致 ${dCnt} 箇所、前後文による推定 ${aCnt} 箇所`
+      : `${q} 件 · 本文一致 ${dCnt} 箇所`,
+    exportLabel: "出力",
+    exportCsvTip: "引用表（CSV・Excel 対応）：底本・葉番号・IIIF 位置リンクを含む",
+    exportAnnoTip: "W3C Web Annotation（JSON-LD）：IIIF ビューアに読み込み可能",
+    parallelBtn: (n) => `諸本並列 (${n})`,
+    noHit: "選択した底本の公開範囲には見つかりませんでした。より短い語句でお試しください。",
+    missing: "該当なし（この本の欠回、または公開範囲外）",
     folioFmt: (p) => `第 ${p} 葉`,
-    openBook: "閲覧",
-    legSame: "朱枠：一致字",
-    legDiff: "金枠：異文・俗字",
-    legAligned: "青破線：対応葉推定（前後文アンカー）",
-    alignBadge: (via, p) => `対応葉推定 · ${via.replace(/本$/, '')}第${p}葉より`,
+    openBook: "原葉を開く",
+    legSame: "一致", legDiff: "異文", legAligned: "対応推定",
+    legSameFull: "朱枠：検索語句と一致する字（繁簡・異体字は同字として扱う）",
+    legDiffFull: "金枠：検索語句と異なる字（異文、または OCR の誤読）",
+    legAlignedFull: "青破線：文字列は一致しないが、他本の前後文から推定した対応箇所",
+    alignBadge: (via, p) => `対応推定 · ${via.replace(/本$/, '')}本 第${p}葉より`,
     alignHud: "対応葉推定",
-    loading: "画像を読み込み中…", focus: "該当箇所に戻る", mirador: "Mirador で開く",
+    loading: "画像を読み込み中…", imgFail: "画像を読み込めませんでした",
+    focus: "該当箇所に戻る", mirador: "Mirador で全巻を開く",
+    prevLeaf: "前の葉", nextLeaf: "次の葉", zoomIn: "拡大", zoomOut: "縮小", pageInput: "PDF 頁順を入力して Enter で移動",
+    mSearch: "検索と結果", mStage: "原本画像",
     stageIdle: "原本画像の閲覧",
-    stageParallel: (q, n) => `対校箇所：「${q}」 — ${n} 種の善本原葉を同時表示中`
+    stageParallel: (q, n) => `「${q}」 · ${n} 種の底本`,
+    helpTitle: "使い方",
+    helpClose: "閉じる",
+    helpHtml: (col, mir) => `
+      <h3>このサイトについて</h3>
+      <p>清代『紅楼夢（石頭記）』古鈔本五種（甲戌本・己卯本・庚辰本・舒序本・鄭蔵本）の影印原葉を横断検索するパイロット版です。一節を入力すると各本の該当葉が並んで開き、画像上の一字ごとの枠で異文を直接比較できます。</p>
+      <h3>使い方</h3>
+      <ol>
+        <li>左の欄に語句を入力します（1行に1件）。繁体字・簡体字・日本の新字体のいずれでも鈔本の原字にヒットします。</li>
+        <li>「諸本の原葉を検索」を押し、結果の行をクリックすると、右側でその本の該当箇所に移動します。</li>
+        <li>画像はホイールで拡大縮小、ドラッグで移動。<kbd>‹</kbd> <kbd>›</kbd> で葉送り、<kbd>⌖</kbd> で該当箇所に戻り、<kbd>B</kbd> キーで字枠を切り替えます。</li>
+      </ol>
+      <h3>三種類の枠</h3>
+      <ul style="list-style:none;padding-left:0">
+        <li><i class="legend-dot legend-same"></i>朱枠：検索語句と一致する字（繁簡・異体字は同字として扱います）</li>
+        <li><i class="legend-dot legend-diff"></i>金枠：検索語句と異なる字（異文。OCR の誤読の場合もあります）</li>
+        <li><i class="legend-dot legend-aligned"></i>青破線：その本では文字列が一致せず、他本の前後文から推定した対応箇所</li>
+      </ul>
+      <h3>公開範囲</h3>
+      <p>本パイロット版で検索できるのは第1〜3回および第23〜24回（計462葉）です。欠回の本は「該当なし」と表示されます（甲戌本・己卯本は第23〜24回を欠き、鄭蔵本は第23〜24回のみ現存）。</p>
+      <h3>ご注意</h3>
+      <p>本文は OCR による自動翻刻で、全葉の人手校正は完了していません。引用の際は必ず原本画像をご確認ください。</p>
+      <h3>オープンデータ</h3>
+      <p>各本の画像は IIIF Presentation v3 で公開しています：<a href="${col}" target="_blank" rel="noopener">IIIF Collection ↗</a> · <a href="${mir}" target="_blank" rel="noopener">Mirador 3 で開く ↗</a>。検索結果は結果一覧の上部から CSV 引用表または W3C Web Annotation（JSON-LD）として出力できます。</p>`
   }
 };
 
@@ -417,7 +598,9 @@ const PRESET_QUERIES = [
   "通灵宝玉\n绛珠草\n冷子兴\n花气袭人知昼暖"
 ];
 
-let LANG = (navigator.language || '').toLowerCase().startsWith('ja') ? 'ja' : 'zh';
+const URL_LANG = new URLSearchParams(location.search).get('lang');
+let LANG = ['zh', 'ja'].includes(URL_LANG) ? URL_LANG
+  : ((navigator.language || '').toLowerCase().startsWith('ja') ? 'ja' : 'zh');
 let BUNDLE = null;
 let CMAP = {};
 let PAGES_INDEX = {};
@@ -792,96 +975,159 @@ function editionLabel(ed) {
   return LANG === 'ja' ? ed.ja_name.split('（')[0] : ed.zh_name;
 }
 
+const MOBILE_MQ = window.matchMedia('(max-width: 820px)');
+const isMobile = () => MOBILE_MQ.matches;
+let COLS = 'auto';
+let LOAD_FAILED = false;
+
 function updateStageCaption() {
   const el = document.getElementById('stageCaption');
   const {query, count} = el.dataset;
   el.textContent = query ? I18N[LANG].stageParallel(query, Number(count)) : I18N[LANG].stageIdle;
+  el.title = el.textContent;
+}
+
+// data-tx：元素文字；data-t：title 与 aria-label
+function applyDataT(root) {
+  const t = I18N[LANG];
+  root.querySelectorAll('[data-tx]').forEach(el => { el.textContent = t[el.dataset.tx]; });
+  root.querySelectorAll('[data-t]').forEach(el => {
+    el.title = t[el.dataset.t];
+    if (el.matches('button, a, input')) el.setAttribute('aria-label', t[el.dataset.t]);
+  });
 }
 
 function applyLangUI() {
   const t = I18N[LANG];
   document.title = t.title;
-  const loading = document.getElementById('loadingStage');
-  if (loading) loading.textContent = t.loading;
   document.documentElement.lang = LANG === 'ja' ? 'ja' : 'zh-CN';
   document.getElementById('langZh').classList.toggle('active', LANG === 'zh');
   document.getElementById('langJa').classList.toggle('active', LANG === 'ja');
-  document.getElementById('uiTitle').textContent = t.title;
-  document.getElementById('uiPilotBadge').textContent = t.pilot;
-  document.getElementById('tabSearchBtn').textContent = t.tabSearch;
-  document.getElementById('tabShelfBtn').textContent = t.tabShelf;
-  document.getElementById('colAutoBtn').textContent = t.colAuto;
-  document.getElementById('col2Btn').textContent = t.col2;
-  document.getElementById('col1Btn').textContent = t.col1;
-  document.getElementById('boxBtn').textContent = t.boxBtn;
-  document.getElementById('scopeNotice').textContent = t.scope;
-  document.getElementById('composerLabel').textContent = t.composerLabel;
-  document.getElementById('searchBtn').textContent = t.searchBtn;
-  document.getElementById('legSame').textContent = t.legSame;
-  document.getElementById('legDiff').textContent = t.legDiff;
-  document.getElementById('legAligned').textContent = t.legAligned;
+  applyDataT(document);
+  document.getElementById('queriesInput').placeholder = t.placeholder;
+  document.getElementById('boxBtn').textContent = SHOW_BOXES ? t.boxOn : t.boxOff;
   updateStageCaption();
 
   document.getElementById('presetBar').innerHTML = t.presets.map((lbl, i) =>
     `<button class="preset-chip" onclick="loadPreset(${i})">${esc(lbl)}</button>`
   ).join('');
 
+  const colUrl = BUNDLE ? BUNDLE.collection_url : './guji/iiif/3/collection.json';
+  const mirUrl = `https://projectmirador.org/embed/?iiif-content=${encodeURIComponent(new URL(colUrl, location.href).href)}`;
+  document.getElementById('helpBody').innerHTML = t.helpHtml(colUrl, mirUrl);
+
   if (BUNDLE) {
     document.querySelectorAll('.iiif-win').forEach(win => {
       const ed = BUNDLE.editions.find(book => book.ed_id === win.dataset.edition);
       win.querySelector('.win-ed').textContent = editionLabel(ed);
-      const pill = win.querySelector('.win-align-pill');
-      if (pill) pill.textContent = t.alignHud;
-      win.querySelector('.focus-btn').title = t.focus;
-      win.querySelector('.mirador-link').title = t.mirador;
     });
     renderWitnessPills();
     renderCatalog();
+    renderWinTabs();
     if (LAST_RESULTS) renderApparatus(LAST_RESULTS);
+  } else if (LOAD_FAILED) {
+    showLoadError();
   }
 }
 
 function setLang(l) {
   LANG = l;
   applyLangUI();
+  syncUrl();
 }
+
+function syncUrl() {
+  try {
+    const p = new URLSearchParams();
+    const q = document.getElementById('queriesInput').value.trim();
+    if (q) p.set('q', q);
+    p.set('lang', LANG);
+    history.replaceState(null, '', location.pathname + '?' + p.toString());
+  } catch (e) {}
+}
+
+function openHelp() {
+  const dlg = document.getElementById('helpDialog');
+  if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+}
+document.getElementById('helpDialog').addEventListener('click', (e) => {
+  if (e.target.id === 'helpDialog') e.target.close();
+});
 
 function loadPreset(i) {
   document.getElementById('queriesInput').value = PRESET_QUERIES[i];
   executeBatchSearch();
 }
 
-function switchDrawer(mode, btn) {
-  btn.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+function switchDrawer(mode) {
+  document.getElementById('tabSearchBtn').classList.toggle('active', mode === 'search');
+  document.getElementById('tabShelfBtn').classList.toggle('active', mode === 'shelf');
   document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
   document.getElementById('pane-' + mode).classList.add('active');
 }
 
-function setCols(mode, btn) {
-  btn.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('windowsGrid').className = 'windows-grid cols-' + mode;
-  setTimeout(() => VIEWERS.forEach(v => v.viewport && v.viewport.goHome(false)), 60);
+function setMobileView(view) {
+  document.body.classList.toggle('m-stage', view === 'stage');
+  document.getElementById('mTabSearch').classList.toggle('active', view !== 'stage');
+  document.getElementById('mTabStage').classList.toggle('active', view === 'stage');
+  if (view === 'stage') setTimeout(refocusAll, 120);
 }
+
+// 手机上固定为一次看一种底本；桌面按所选布局
+function applyCols() {
+  const mode = isMobile() ? '1' : COLS;
+  document.getElementById('windowsGrid').className = 'windows-grid cols-' + mode;
+  document.getElementById('galleryStage').classList.toggle('single', mode === '1');
+  document.querySelectorAll('#layoutGroup .seg-btn').forEach(b => b.classList.toggle('active', b.dataset.cols === COLS));
+  setTimeout(refocusAll, 120);
+}
+
+function setCols(mode) {
+  COLS = mode;
+  applyCols();
+}
+MOBILE_MQ.addEventListener('change', applyCols);
 
 function toggleBoxes() {
   SHOW_BOXES = !SHOW_BOXES;
   document.getElementById('galleryStage').classList.toggle('hide-boxes', !SHOW_BOXES);
-  document.getElementById('boxBtn').classList.toggle('off', !SHOW_BOXES);
+  const btn = document.getElementById('boxBtn');
+  btn.classList.toggle('off', !SHOW_BOXES);
+  btn.textContent = SHOW_BOXES ? I18N[LANG].boxOn : I18N[LANG].boxOff;
 }
 
 document.addEventListener('keydown', (e) => {
-  if ((e.key === 'b' || e.key === 'B') && !['TEXTAREA', 'INPUT'].includes(document.activeElement.tagName)) toggleBoxes();
+  const tag = document.activeElement.tagName;
+  if ((e.key === 'b' || e.key === 'B') && !e.metaKey && !e.ctrlKey && !e.altKey && !['TEXTAREA', 'INPUT'].includes(tag)) toggleBoxes();
+  if (e.key === 'Enter' && (e.metaKey || e.ctrlKey) && document.activeElement.id === 'queriesInput') {
+    e.preventDefault();
+    executeBatchSearch();
+  }
 });
+
+function showLoadError() {
+  const t = I18N[LANG];
+  const html = `<span>${esc(t.loadFail)}</span><button class="ghost-action" onclick="location.reload()">${esc(t.retry)}</button>`;
+  document.getElementById('windowsGrid').innerHTML = `<div class="stage-placeholder">${html}</div>`;
+  document.getElementById('apparatusList').innerHTML =
+    `<div class="notice">${esc(t.loadFail)}<br><button class="sub-btn" onclick="location.reload()">${esc(t.retry)}</button></div>`;
+}
 
 async function boot() {
   applyLangUI();
-  const res = await fetch('./data/showcase_bundle.json');
-  BUNDLE = await res.json();
+  applyCols();
+  try {
+    const res = await fetch('./data/showcase_bundle.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    BUNDLE = await res.json();
+  } catch (e) {
+    LOAD_FAILED = true;
+    showLoadError();
+    return;
+  }
 
-  const pairs = BUNDLE.cmap_pairs || '';
-  for (let i = 0; i < pairs.length; i += 2) {
+  const pairs = Array.from(BUNDLE.cmap_pairs || '');  // 按 Unicode 码点切分，避免扩展区汉字代理对错位
+  for (let i = 0; i + 1 < pairs.length; i += 2) {
     CMAP[pairs[i]] = pairs[i + 1];
   }
 
@@ -898,21 +1144,20 @@ async function boot() {
     });
   });
 
-  document.getElementById('iiifColLink').href = BUNDLE.collection_url;
-  document.getElementById('miradorTopLink').href =
-    `https://projectmirador.org/embed/?iiif-content=${encodeURIComponent(BUNDLE.collection_url)}`;
+  const q0 = new URLSearchParams(location.search).get('q');
+  if (q0) document.getElementById('queriesInput').value = q0;
+  document.getElementById('searchBtn').disabled = false;
 
-  renderWitnessPills();
-  renderCatalog();
-  executeBatchSearch();
+  applyLangUI();
+  executeBatchSearch(true);
 }
 
 function renderWitnessPills() {
   document.getElementById('witnessBar').innerHTML = BUNDLE.editions.map(ed => {
     const on = SELECTED_EDS.has(ed.ed_id);
-    return `<span class="wit-pill ${on ? 'checked' : ''}" onclick="toggleWit('${ed.ed_id}')">
-      <i class="dot"></i>${esc(editionLabel(ed))}
-    </span>`;
+    return `<button type="button" class="wit-pill ${on ? 'checked' : ''}" role="checkbox" aria-checked="${on}" onclick="toggleWit('${ed.ed_id}')">
+      <i class="box">✓</i>${esc(editionLabel(ed))}
+    </button>`;
   }).join('');
 }
 
@@ -933,19 +1178,25 @@ function renderCatalog() {
         <h3 class="cat-title">${esc(title)} <span class="cat-id">${ed.mid}</span></h3>
         <p class="cat-desc">${esc(desc)}</p>
         <div class="cat-meta">
-          <a href="${ed.manifest_url}" target="_blank">IIIF v3 Manifest ↗</a>
-          <a href="${miradorUrl}" target="_blank">Mirador 3 ↗</a>
+          <a href="${ed.manifest_url}" target="_blank" rel="noopener">IIIF v3 Manifest ↗</a>
+          <a href="${miradorUrl}" target="_blank" rel="noopener">Mirador 3 ↗</a>
         </div>
       </div>
-      <button class="sub-btn" onclick="openBookLeaf('${ed.ed_id}', ${ed.first_leaf})">${t.openBook}</button>
+      <button class="sub-btn" onclick="openBookLeaf('${ed.ed_id}', ${ed.first_leaf})">${esc(t.openBook)}</button>
     </div>`;
   }).join('');
 }
 
-function executeBatchSearch() {
+function executeBatchSearch(initial) {
   if (!BUNDLE) return;
   const queries = document.getElementById('queriesInput').value.split('\n').map(s => s.trim()).filter(Boolean);
-  if (!queries.length) return;
+  if (!queries.length) {
+    LAST_RESULTS = null;
+    document.getElementById('apparatusList').innerHTML = `<div class="notice">${esc(I18N[LANG].emptyInput)}</div>`;
+    document.getElementById('queriesInput').focus();
+    return;
+  }
+  if (initial !== true) syncUrl();
 
   const t0 = performance.now();
   const results = [];
@@ -980,8 +1231,12 @@ function executeBatchSearch() {
   }
   const elapsed = (performance.now() - t0).toFixed(1);
   LAST_RESULTS = { query_count: results.length, elapsed_ms: elapsed, results };
+  CUR = null;
   renderApparatus(LAST_RESULTS);
-  if (results.length > 0) openParallel(0);
+  document.getElementById('apparatusList').scrollTop = 0;
+  const firstHit = results.findIndex(r => r.total_hits > 0);
+  if (firstHit >= 0) openParallel(firstHit);
+  else { destroyViewers(); document.getElementById('windowsGrid').innerHTML = `<div class="stage-placeholder">${esc(I18N[LANG].noHit)}</div>`; }
 }
 
 function renderApparatus(data) {
@@ -993,11 +1248,14 @@ function renderApparatus(data) {
       else directCnt++;
     }));
   });
-  let html = `<div class="meta-strip"><span>${t.statFmt(data.query_count, directCnt, alignedCnt, data.elapsed_ms)}</span></div>`;
+  const exportHtml = (directCnt + alignedCnt) ? `<span class="export-links">${esc(t.exportLabel)}
+      <button class="link-btn" onclick="exportCSV()" title="${esc(t.exportCsvTip)}">CSV</button>
+      <button class="link-btn" onclick="exportWebAnnotation()" title="${esc(t.exportAnnoTip)}">JSON-LD</button></span>` : '';
+  let html = `<div class="meta-strip"><span>${esc(t.statFmt(data.query_count, directCnt, alignedCnt))}</span>${exportHtml}</div>`;
 
   data.results.forEach((item, qi) => {
-    const flat = [];
-    Object.values(item.by_edition).forEach(arr => arr.forEach(h => flat.push(h)));
+    const eds = BUNDLE.editions.filter(ed => item.by_edition[ed.ed_id]);
+    const nHitEd = eds.filter(ed => item.by_edition[ed.ed_id].length).length;
     const idxStr = String(qi + 1).padStart(2, '0');
 
     html += `<div class="app-entry" id="entry-${qi}">
@@ -1006,41 +1264,61 @@ function renderApparatus(data) {
           <span class="app-idx">${idxStr}</span>
           <span class="app-qtext" title="${esc(item.query)}">${esc(item.query)}</span>
         </div>
-        ${flat.length ? `<button class="btn-parallel" onclick="openParallel(${qi})">${t.parallelBtn(flat.length)}</button>` : ''}
+        ${nHitEd ? `<button class="btn-parallel" onclick="openParallel(${qi})">${esc(t.parallelBtn(nHitEd))}</button>` : ''}
       </div>`;
 
-    if (!flat.length) {
-      html += `<div style="padding:11px 14px;font-size:13px;color:var(--stone)">${t.noHit}</div>`;
+    if (!nHitEd) {
+      html += `<div class="notice" style="padding:11px 14px">${esc(t.noHit)}</div>`;
     } else {
       html += `<table class="rdg-table"><tbody>`;
-      flat.forEach(h => {
-        const isAl = h.hit_type === 'aligned';
-        const shortWit = editionLabel(h).replace(/本$/, '');
-        const stampCls = isAl ? 'wit-stamp is-aligned' : 'wit-stamp';
-        const viaName = LANG === 'ja' ? (h.via_ja_name || '').split('（')[0] : (h.via_zh_name || '');
-        const badgeHtml = isAl ? `<span class="rdg-align-badge">${esc(t.alignBadge(viaName, h.via_page))}</span>` : '';
-        const midHtml = h.char_boxes.map(cb =>
-          (isAl || cb.a) ? `<span class="ch-aligned">${esc(cb.c)}</span>`
-            : (cb.v ? `<span class="ch-diff">${esc(cb.c)}</span>` : `<span>${esc(cb.c)}</span>`)
-        ).join('');
-        const bxHtml = h.banxin ? `<span class="rdg-banxin">${esc(h.banxin)}</span>` : '';
-        const payload = JSON.stringify(h).replace(/'/g, "&#39;");
+      eds.forEach(ed => {
+        const shortWit = editionLabel(ed).replace(/本$/, '');
+        const arr = item.by_edition[ed.ed_id];
+        if (!arr.length) {
+          html += `<tr class="rdg-row is-missing">
+            <td class="rdg-wit"><span class="wit-stamp is-missing">${esc(shortWit)}</span></td>
+            <td class="rdg-text miss">${esc(t.missing)}</td>
+          </tr>`;
+          return;
+        }
+        arr.forEach((h, hi) => {
+          const isAl = h.hit_type === 'aligned';
+          const stampCls = isAl ? 'wit-stamp is-aligned' : 'wit-stamp';
+          const viaName = LANG === 'ja' ? (h.via_ja_name || '').split('（')[0] : (h.via_zh_name || '');
+          const badgeHtml = isAl ? `<span class="rdg-align-badge">${esc(t.alignBadge(viaName, h.via_page))}</span>` : '';
+          const midHtml = h.char_boxes.map(cb =>
+            (isAl || cb.a) ? `<span class="ch-aligned">${esc(cb.c)}</span>`
+              : (cb.v ? `<span class="ch-diff">${esc(cb.c)}</span>` : `<span>${esc(cb.c)}</span>`)
+          ).join('');
+          const bxHtml = h.banxin ? `<span class="rdg-banxin">${esc(h.banxin)}</span>` : '';
 
-        html += `<tr class="rdg-row" onclick='openSingleHit(${payload}, this)'>
-          <td class="rdg-wit">
-            <span class="${stampCls}">${esc(shortWit)}</span>
-            <span class="wit-folio">${t.folioFmt(h.page_no)}</span>
-          </td>
-          <td class="rdg-text">
-            ${badgeHtml}<span class="ctx">${esc(h.context_left)}</span>${midHtml}<span class="ctx">${esc(h.context_right)}</span>${bxHtml}
-          </td>
-        </tr>`;
+          html += `<tr class="rdg-row" tabindex="0" role="button" data-key="${qi}:${ed.ed_id}:${hi}"
+              onclick="openHit(${qi}, '${ed.ed_id}', ${hi})"
+              onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }">
+            <td class="rdg-wit">
+              <span class="${stampCls}">${esc(shortWit)}</span>
+              <span class="wit-folio">${esc(t.folioFmt(h.page_no))}</span>
+            </td>
+            <td class="rdg-text">
+              ${badgeHtml}<span class="ctx">${esc(h.context_left)}</span>${midHtml}<span class="ctx">${esc(h.context_right)}</span>${bxHtml}
+            </td>
+          </tr>`;
+        });
       });
       html += `</tbody></table>`;
     }
     html += `</div>`;
   });
   document.getElementById('apparatusList').innerHTML = html;
+  if (CUR) markActiveEntry(CUR.qi, CUR.focusKey);
+}
+
+// 当前右侧打开的内容：{ qi, picks: [{ edId, hi, hit, viewerId }], activeEd, focusKey }
+let CUR = null;
+
+function markActiveEntry(qi, focusKey) {
+  document.querySelectorAll('.app-entry').forEach((el, i) => el.classList.toggle('active-entry', i === qi));
+  document.querySelectorAll('.rdg-row').forEach(el => el.classList.toggle('focused', !!focusKey && el.dataset.key === focusKey));
 }
 
 function destroyViewers() {
@@ -1050,79 +1328,128 @@ function destroyViewers() {
   updateStageCaption();
   VIEWERS.forEach(v => { try { v.destroy(); } catch (e) {} });
   VIEWERS = [];
+  CUR = null;
+  document.getElementById('windowsGrid').innerHTML = '';
+  document.getElementById('winTabs').innerHTML = '';
 }
 
-function openParallel(qi) {
+function renderWinTabs() {
+  const box = document.getElementById('winTabs');
+  if (!CUR || CUR.picks.length < 2) { box.innerHTML = ''; return; }
+  box.innerHTML = CUR.picks.map(p => {
+    const ed = BUNDLE.editions.find(e => e.ed_id === p.edId);
+    const cls = ['win-tab', p.edId === CUR.activeEd ? 'active' : '', p.hit.hit_type === 'aligned' ? 'is-aligned' : ''].join(' ');
+    return `<button class="${cls}" onclick="setActiveWin('${p.edId}', false)">${esc(editionLabel(ed))}</button>`;
+  }).join('');
+}
+
+function setActiveWin(edId, flash) {
+  if (!CUR) return;
+  CUR.activeEd = edId;
+  document.querySelectorAll('.iiif-win').forEach(win => {
+    const on = win.dataset.edition === edId;
+    win.classList.toggle('is-active', on);
+    if (on && flash) {
+      win.classList.remove('flash');
+      void win.offsetWidth;
+      win.classList.add('flash');
+    }
+  });
+  renderWinTabs();
+}
+
+function openParallel(qi, pick) {
   const item = LAST_RESULTS && LAST_RESULTS.results[qi];
   if (!item) return;
-  document.querySelectorAll('.app-entry').forEach((el, i) => el.classList.toggle('active-entry', i === qi));
-  const hits = [];
-  Object.values(item.by_edition).forEach(arr => { if (arr && arr.length) hits.push(arr[0]); });
-  if (!hits.length) return;
+  const picks = [];
+  BUNDLE.editions.forEach(ed => {
+    const arr = item.by_edition[ed.ed_id];
+    if (!arr || !arr.length) return;
+    const hi = (pick && pick.edId === ed.ed_id && arr[pick.hi]) ? pick.hi : 0;
+    picks.push({ edId: ed.ed_id, hi, hit: arr[hi] });
+  });
+  const focusKey = pick ? `${qi}:${pick.edId}:${pick.hi}` : null;
+  markActiveEntry(qi, focusKey);
+  if (!picks.length) return;
 
   destroyViewers();
   const grid = document.getElementById('windowsGrid');
-  grid.innerHTML = '';
-  const qShort = item.query.length > 36 ? item.query.slice(0, 36) + '…' : item.query;
-  Object.assign(document.getElementById('stageCaption').dataset, { query: qShort, count: hits.length });
+  const qShort = item.query.length > 30 ? item.query.slice(0, 30) + '…' : item.query;
+  Object.assign(document.getElementById('stageCaption').dataset, { query: qShort, count: picks.length });
   updateStageCaption();
-  hits.forEach((h, i) => mountWin(grid, h, i));
+  CUR = { qi, picks, activeEd: pick ? pick.edId : picks[0].edId, focusKey };
+  picks.forEach((p, i) => { p.viewerId = mountWin(grid, p.hit, i); });
+  setActiveWin(CUR.activeEd, !!pick);
 }
 
-function openSingleHit(hit, rowEl) {
-  document.querySelectorAll('.rdg-row').forEach(el => el.classList.remove('focused'));
-  if (rowEl) rowEl.classList.add('focused');
-  destroyViewers();
-  const grid = document.getElementById('windowsGrid');
-  grid.innerHTML = '';
-  mountWin(grid, hit, 0);
+// 点击结果行：保持诸本并观，只把该本定位到这一处
+function openHit(qi, edId, hi) {
+  const same = CUR && CUR.qi === qi && CUR.picks.find(p => p.edId === edId && p.hi === hi);
+  if (same) {
+    CUR.focusKey = `${qi}:${edId}:${hi}`;
+    markActiveEntry(qi, CUR.focusKey);
+    setActiveWin(edId, true);
+    refocus(same.viewerId);
+  } else {
+    openParallel(qi, { edId, hi });
+  }
+  if (isMobile()) setMobileView('stage');
 }
 
 function openBookLeaf(edId, pno) {
   const ed = BUNDLE.editions.find(e => e.ed_id === edId);
   if (!ed) return;
   destroyViewers();
+  markActiveEntry(-1, null);
   const grid = document.getElementById('windowsGrid');
-  grid.innerHTML = '';
-  mountWin(grid, {
-    ed_id: ed.ed_id, zh_name: ed.zh_name, page_no: pno, banxin: '',
+  const hit = {
+    ed_id: ed.ed_id, zh_name: ed.zh_name, page_no: pno, banxin: (PAGE_BY_NO[`${edId}:${pno}`] || { pg: {} }).pg.banxin || '',
     canvas_w: ed.sample_w, canvas_h: ed.sample_h,
     img_url: `${BUNDLE.cos_base}/images/${ed.ed_id}/page_${String(pno).padStart(4, '0')}.jpg`,
     manifest_url: ed.manifest_url,
     char_boxes: [], region_xywh: null
-  }, 0);
+  };
+  CUR = { qi: -1, picks: [{ edId, hi: 0, hit }], activeEd: edId, focusKey: null };
+  CUR.picks[0].viewerId = mountWin(grid, hit, 0);
+  setActiveWin(edId, false);
+  if (isMobile()) setMobileView('stage');
 }
 
 function mountWin(grid, hit, idx) {
   const ed = BUNDLE.editions.find(e => e.ed_id === hit.ed_id);
   const miradorUrl = `https://projectmirador.org/embed/?iiif-content=${encodeURIComponent(hit.manifest_url)}`;
-  const win = document.createElement('div');
+  const win = document.createElement('section');
   win.className = 'iiif-win';
   win.dataset.edition = hit.ed_id;
   const id = `osd-${idx}-${Date.now()}`;
-
   const isAl = hit.hit_type === 'aligned';
-  const alignPill = isAl ? `<span class="win-align-pill">${esc(I18N[LANG].alignHud)}</span>` : '';
 
   win.innerHTML = `
     <div class="win-hud">
       <div class="win-label">
         <span class="win-ed">${esc(editionLabel(ed))}</span>
-        ${alignPill}
+        ${isAl ? `<span class="win-align-pill" data-tx="alignHud" data-t="legAlignedFull"></span>` : ''}
         <span class="win-banxin">${hit.banxin ? esc(hit.banxin) : ''}</span>
       </div>
       <div class="win-nav">
-        <button class="hud-btn" onclick="stepLeaf('${id}', '${hit.ed_id}', -1)">‹</button>
-        <input class="hud-pno" id="${id}-inp" value="${hit.page_no}" onchange="jumpLeaf('${id}', '${hit.ed_id}', this.value)" />
-        <span class="hud-total">/ ${ed.max_pno}</span>
-        <button class="hud-btn" onclick="stepLeaf('${id}', '${hit.ed_id}', 1)">›</button>
-        <button class="hud-btn focus-btn" title="${I18N[LANG].focus}" onclick="refocus('${id}')">⌖</button>
-        <a class="hud-btn mirador-link" href="${miradorUrl}" target="_blank" title="${I18N[LANG].mirador}">Mirador</a>
+        <button class="hud-btn" data-t="prevLeaf" onclick="stepLeaf('${id}', '${hit.ed_id}', -1)">‹</button>
+        <input class="hud-pno" id="${id}-inp" inputmode="numeric" data-t="pageInput" value="${hit.page_no}" onchange="jumpLeaf('${id}', '${hit.ed_id}', this.value)" />
+        <button class="hud-btn" data-t="nextLeaf" onclick="stepLeaf('${id}', '${hit.ed_id}', 1)">›</button>
+        <span class="hud-sep"></span>
+        <button class="hud-btn" data-t="zoomOut" onclick="zoomWin('${id}', 0.7)">−</button>
+        <button class="hud-btn" data-t="zoomIn" onclick="zoomWin('${id}', 1.43)">＋</button>
+        <button class="hud-btn focus-btn" data-t="focus" onclick="refocus('${id}')">⌖</button>
+        <a class="hud-btn txt mirador-link" data-t="mirador" href="${miradorUrl}" target="_blank" rel="noopener">Mirador ↗</a>
       </div>
     </div>
-    <div class="osd-mount" id="${id}"></div>
+    <div class="osd-wrap">
+      <div class="osd-mount" id="${id}"></div>
+      <div class="win-status" data-tx="loading"></div>
+    </div>
   `;
+  applyDataT(win);
   grid.appendChild(win);
+  const statusEl = win.querySelector('.win-status');
 
   const viewer = OpenSeadragon({
     id,
@@ -1133,35 +1460,58 @@ function mountWin(grid, hit, idx) {
     maxZoomPixelRatio: 4.0,
     tileSources: { type: 'image', url: hit.img_url, buildPyramid: false }
   });
-  viewer._meta = { ed, focusBounds: null };
+  viewer._meta = { ed, focusBounds: null, win, firstHit: hit };
 
   viewer.addHandler('open', () => {
-    (hit.char_boxes || []).forEach(cb => {
+    statusEl.hidden = true;
+    const h0 = viewer._meta.firstHit;
+    viewer._meta.firstHit = null;   // 翻页后不再套用首个命中的字框
+    if (!h0) return;
+    (h0.char_boxes || []).forEach(cb => {
       const [x, y, w, h] = cb.xywh;
       const el = document.createElement('div');
-      const isAlBox = (hit.hit_type === 'aligned' || cb.a);
+      const isAlBox = (h0.hit_type === 'aligned' || cb.a);
       el.className = isAlBox ? 'iiif-box-aligned' : (cb.v ? 'iiif-box-var' : 'iiif-box-exact');
       el.title = cb.c;
       viewer.addOverlay({ element: el, location: viewer.viewport.imageToViewportRectangle(x, y, w, h) });
     });
-    if (hit.region_xywh && hit.char_boxes && hit.char_boxes.length > 0) {
-      const [rx, ry, rw, rh] = hit.region_xywh;
+    if (h0.region_xywh && h0.char_boxes && h0.char_boxes.length > 0) {
+      const [rx, ry, rw, rh] = h0.region_xywh;
       const padX = Math.max(250, rw * 1.35), padY = Math.max(170, rh * 0.16);
       const fx = Math.max(0, rx - padX), fy = Math.max(0, ry - padY);
-      const fw = Math.min(hit.canvas_w - fx, rw + padX * 2);
-      const fh = Math.min(hit.canvas_h - fy, rh + padY * 2);
+      const fw = Math.min(h0.canvas_w - fx, rw + padX * 2);
+      const fh = Math.min(h0.canvas_h - fy, rh + padY * 2);
       const b = viewer.viewport.imageToViewportRectangle(fx, fy, fw, fh);
       viewer._meta.focusBounds = b;
       viewer.viewport.fitBounds(b, true);
     }
   });
+  viewer.addHandler('open-failed', () => {
+    statusEl.hidden = false;
+    statusEl.dataset.tx = 'imgFail';
+    statusEl.textContent = I18N[LANG].imgFail;
+  });
+  win.addEventListener('pointerdown', () => { if (CUR && CUR.activeEd !== hit.ed_id) setActiveWin(hit.ed_id, false); });
   VIEWERS.push(viewer);
+  return id;
 }
 
 function refocus(id) {
   const v = VIEWERS.find(x => x.id === id);
-  if (v && v._meta.focusBounds) v.viewport.fitBounds(v._meta.focusBounds, false);
-  else if (v) v.viewport.goHome(false);
+  if (!v || !v.viewport) return;
+  if (v._meta.focusBounds) v.viewport.fitBounds(v._meta.focusBounds, false);
+  else v.viewport.goHome(false);
+}
+
+function refocusAll() {
+  VIEWERS.forEach(v => refocus(v.id));
+}
+
+function zoomWin(id, factor) {
+  const v = VIEWERS.find(x => x.id === id);
+  if (!v || !v.viewport) return;
+  v.viewport.zoomBy(factor);
+  v.viewport.applyConstraints();
 }
 
 function stepLeaf(id, edId, d) {
@@ -1184,13 +1534,25 @@ function jumpLeaf(id, edId, target) {
   if (!v) return;
   const ed = v._meta.ed;
   const pnos = ed.showcase_pnos || [];
-  let pno = parseInt(target || ed.first_leaf, 10);
+  let pno = parseInt(target, 10);
+  if (!Number.isFinite(pno)) pno = ed.first_leaf;
   if (pnos.length && !pnos.includes(pno)) {
     pno = pnos.reduce((prev, curr) => Math.abs(curr - pno) < Math.abs(prev - pno) ? curr : prev);
   }
   document.getElementById(id + '-inp').value = pno;
+  // 翻页后同步版心信息，并撤下只属于原命中页的「推定对应」标记
+  const win = v._meta.win;
+  const entry = PAGE_BY_NO[`${edId}:${pno}`];
+  win.querySelector('.win-banxin').textContent = entry ? (entry.pg.banxin || '') : '';
+  const pill = win.querySelector('.win-align-pill');
+  if (pill) pill.remove();
+  const statusEl = win.querySelector('.win-status');
+  statusEl.dataset.tx = 'loading';
+  statusEl.textContent = I18N[LANG].loading;
+  statusEl.hidden = false;
   v.clearOverlays();
   v._meta.focusBounds = null;
+  v._meta.firstHit = null;
   v.open({ type: 'image', url: `${BUNDLE.cos_base}/images/${edId}/page_${String(pno).padStart(4, '0')}.jpg`, buildPyramid: false });
 }
 
