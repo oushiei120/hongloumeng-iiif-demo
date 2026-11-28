@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>红楼梦诸本对校 · IIIF 善本影像检索</title>
 <script src="./vendor/openseadragon.min.js"></script>
+<script src="./cite.js"></script>
 <style>
   :root {
     --washi: #f7f4ee;
@@ -472,6 +473,9 @@ const I18N = {
     statFmt: (q, dCnt, aCnt) => aCnt > 0
       ? `共 ${q} 条 · 原文命中 ${dCnt} 处，另据上下文定位 ${aCnt} 处`
       : `共 ${q} 条 · 原文命中 ${dCnt} 处`,
+    citedNote: "这是一条引用链接，右侧原页上框出的就是所引位置。要查别的词句，在上面输入后检索。",
+    citeBtn: "生成引用",
+    citeTip: "按所选底本生成可粘贴到论文里的引用（引用键、页码与原页链接）",
     exportLabel: "导出",
     exportCsvTip: "引证表（CSV，可用 Excel 打开），含底本、页码与 IIIF 定位链接",
     exportAnnoTip: "W3C Web Annotation（JSON-LD），可导入 IIIF 阅览器",
@@ -509,6 +513,8 @@ const I18N = {
         <li><i class="legend-dot legend-diff"></i>金框：与检索句不同的字，即异文，也可能是 OCR 误识</li>
         <li><i class="legend-dot legend-aligned"></i>蓝虚框：该本字面未命中，系统依据其他底本的前后文推定的对应位置</li>
       </ul>
+      <h3>引用</h3>
+      <p>检索后点结果上方的「生成引用」，打开或关闭要引用的底本，即可复制脚注文本、Markdown、BibTeX 或引用键。引用里的链接会直接打开该页并框出所引位置。</p>
       <h3>公开范围</h3>
       <p>本示范版可检索第 1–3 回与第 23–24 回（共 462 页）。底本缺回时显示「未检出」：甲戌本缺第 23–24 回，己卯本缺第 23–24 回，郑藏本仅存第 23–24 回。</p>
       <h3>请注意</h3>
@@ -543,6 +549,9 @@ const I18N = {
     statFmt: (q, dCnt, aCnt) => aCnt > 0
       ? `${q} 件 · 本文一致 ${dCnt} 箇所、前後文による推定 ${aCnt} 箇所`
       : `${q} 件 · 本文一致 ${dCnt} 箇所`,
+    citedNote: "引用リンクから開きました。右の原葉上の枠が引用箇所です。別の語句を調べるには、上の欄に入力して検索してください。",
+    citeBtn: "引用を作成",
+    citeTip: "選択した底本について、論文に貼り付けられる引用（引用キー・葉番号・原葉リンク）を作成",
     exportLabel: "出力",
     exportCsvTip: "引用表（CSV・Excel 対応）：底本・葉番号・IIIF 位置リンクを含む",
     exportAnnoTip: "W3C Web Annotation（JSON-LD）：IIIF ビューアに読み込み可能",
@@ -580,6 +589,8 @@ const I18N = {
         <li><i class="legend-dot legend-diff"></i>金枠：検索語句と異なる字（異文。OCR の誤読の場合もあります）</li>
         <li><i class="legend-dot legend-aligned"></i>青破線：その本では文字列が一致せず、他本の前後文から推定した対応箇所</li>
       </ul>
+      <h3>引用</h3>
+      <p>検索後、結果一覧の上の「引用を作成」を押し、引用する底本をオン・オフすると、脚注テキスト・Markdown・BibTeX・引用キーをコピーできます。引用中のリンクを開くと、その葉の該当箇所が枠で示されます。</p>
       <h3>公開範囲</h3>
       <p>本パイロット版で検索できるのは第1〜3回および第23〜24回（計462葉）です。欠回の本は「該当なし」と表示されます（甲戌本・己卯本は第23〜24回を欠き、鄭蔵本は第23〜24回のみ現存）。</p>
       <h3>ご注意</h3>
@@ -793,7 +804,7 @@ function packHit(edMeta, pg, absS, absE, combOrig, cBoxes, score, charStart, cha
     region_xywh: rxywh,
     char_boxes: cBoxes,
     img_url: `${BUNDLE.cos_base}/images/${edMeta.ed_id}/page_${String(pg.pno).padStart(4, '0')}.jpg`,
-    canvas_id: `${BUNDLE.cos_base}/iiif/3/${edMeta.ed_id}/canvas/p${pg.pno}`,
+    canvas_id: `${BUNDLE.public_iiif_base || BUNDLE.cos_base}/iiif/3/${edMeta.ed_id}/canvas/p${pg.pno}`,
     manifest_url: edMeta.manifest_url
   };
 }
@@ -966,7 +977,7 @@ function inferAlignedHit(anchorHit, dstEdId, qLen) {
     region_xywh: rxywh,
     char_boxes: cBoxes,
     img_url: `${BUNDLE.cos_base}/images/${edMeta.ed_id}/page_${String(targetPno).padStart(4, '0')}.jpg`,
-    canvas_id: `${BUNDLE.cos_base}/iiif/3/${edMeta.ed_id}/canvas/p${targetPno}`,
+    canvas_id: `${BUNDLE.public_iiif_base || BUNDLE.cos_base}/iiif/3/${edMeta.ed_id}/canvas/p${targetPno}`,
     manifest_url: edMeta.manifest_url
   };
 }
@@ -1148,8 +1159,17 @@ async function boot() {
   if (q0) document.getElementById('queriesInput').value = q0;
   document.getElementById('searchBtn').disabled = false;
 
+  HLMCite.init('./data/cite_config.json');
   applyLangUI();
-  executeBatchSearch(true);
+  const at = HLMCite.parseAt(location.search);     // 引用链接：直接打开所引的页并框出位置
+  if (at && !q0) {
+    document.getElementById('queriesInput').value = '';
+    document.getElementById('apparatusList').innerHTML = `<div class="notice">${esc(I18N[LANG].citedNote)}</div>`;
+    document.getElementById('windowsGrid').innerHTML = '';
+  } else {
+    executeBatchSearch(true);
+  }
+  if (at) openCitedLeaf(at);
 }
 
 function renderWitnessPills() {
@@ -1248,7 +1268,9 @@ function renderApparatus(data) {
       else directCnt++;
     }));
   });
-  const exportHtml = (directCnt + alignedCnt) ? `<span class="export-links">${esc(t.exportLabel)}
+  const exportHtml = (directCnt + alignedCnt) ? `<span class="export-links">
+      <button class="btn-parallel" onclick="HLMCite.open(citeResults(), LANG)" title="${esc(t.citeTip)}">${esc(t.citeBtn)}</button>
+      ${esc(t.exportLabel)}
       <button class="link-btn" onclick="exportCSV()" title="${esc(t.exportCsvTip)}">CSV</button>
       <button class="link-btn" onclick="exportWebAnnotation()" title="${esc(t.exportAnnoTip)}">JSON-LD</button></span>` : '';
   let html = `<div class="meta-strip"><span>${esc(t.statFmt(data.query_count, directCnt, alignedCnt))}</span>${exportHtml}</div>`;
@@ -1412,6 +1434,35 @@ function openBookLeaf(edId, pno) {
   CUR = { qi: -1, picks: [{ edId, hi: 0, hit }], activeEd: edId, focusKey: null };
   CUR.picks[0].viewerId = mountWin(grid, hit, 0);
   setActiveWin(edId, false);
+  if (isMobile()) setMobileView('stage');
+}
+
+// 引用时每个底本取一处命中：当前正在看的那一句，用右侧窗口里打开的那一处
+function citeResults() {
+  return LAST_RESULTS.results.map((item, qi) => {
+    if (!CUR || CUR.qi !== qi) return item;
+    const by = Object.assign({}, item.by_edition);
+    CUR.picks.forEach(p => { if (by[p.edId] && by[p.edId][p.hi]) by[p.edId] = [by[p.edId][p.hi]]; });
+    return { query: item.query, by_edition: by };
+  });
+}
+
+function openCitedLeaf(at) {
+  const ed = BUNDLE.editions.find(e => e.ed_id === at.ed);
+  if (!ed || !(ed.showcase_pnos || []).includes(at.page)) return;
+  const pg = (PAGE_BY_NO[`${at.ed}:${at.page}`] || { pg: {} }).pg;
+  destroyViewers();
+  markActiveEntry(-1, null);
+  const hit = {
+    ed_id: ed.ed_id, zh_name: ed.zh_name, page_no: at.page, banxin: pg.banxin || '',
+    canvas_w: pg.w || ed.sample_w, canvas_h: pg.h || ed.sample_h,
+    img_url: `${BUNDLE.cos_base}/images/${ed.ed_id}/page_${String(at.page).padStart(4, '0')}.jpg`,
+    manifest_url: ed.manifest_url,
+    char_boxes: [{ c: '', xywh: at.xywh, v: false }], region_xywh: at.xywh
+  };
+  CUR = { qi: -1, picks: [{ edId: at.ed, hi: 0, hit }], activeEd: at.ed, focusKey: null };
+  CUR.picks[0].viewerId = mountWin(document.getElementById('windowsGrid'), hit, 0);
+  setActiveWin(at.ed, false);
   if (isMobile()) setMobileView('stage');
 }
 
