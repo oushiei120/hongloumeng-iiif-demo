@@ -70,6 +70,30 @@
           "鄭蔵本（鄭振鐸旧蔵残鈔本）"
         ]
       }
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/manifest.json",
+      "type": "Manifest",
+      "label": {
+        "zh-CN": [
+          "戚序本"
+        ],
+        "ja": [
+          "戚序本（有正書局大字本系）"
+        ]
+      }
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/manifest.json",
+      "type": "Manifest",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本"
+        ],
+        "ja": [
+          "楊蔵本・夢稿本（百廿回鈔本）"
+        ]
+      }
     }
   ]
 }

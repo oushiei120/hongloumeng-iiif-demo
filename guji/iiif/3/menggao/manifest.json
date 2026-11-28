@@ -1,0 +1,2478 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/manifest.json",
+  "type": "Manifest",
+  "label": {
+    "zh-CN": [
+      "杨藏本·梦稿本"
+    ],
+    "ja": [
+      "楊蔵本・夢稿本（百廿回鈔本）"
+    ]
+  },
+  "summary": {
+    "zh-CN": [
+      "乾隆抄本百廿回红楼梦稿（杨继震藏本） · 存120回 · 精选第1–3、23–24回70叶原图公开"
+    ],
+    "ja": [
+      "乾隆鈔本百廿回紅樓夢稿（楊継震蔵本） · 全120回 · 第1〜3・23〜24回70葉IIIF画像公開"
+    ]
+  },
+  "rights": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "viewingDirection": "right-to-left",
+  "behavior": [
+    "paged"
+  ],
+  "items": [
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p3",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.3"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第3葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p3/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p3/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0003.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p4",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.4"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第4葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p4/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p4/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0004.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p5",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.5"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第5葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p5/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p5/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0005.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p6",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.6"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第6葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p6/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p6/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0006.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p7",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.7"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第7葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p7/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p7/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0007.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p8",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.8"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第8葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p8/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p8/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0008.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p9",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.9"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第9葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p9/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p9/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0009.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p10",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.10"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第10葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p10/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p10/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0010.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p11",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.11"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第11葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p11/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p11/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0011.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p12",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.12"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第12葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p12/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p12/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0012.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p13",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.13"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第13葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p13/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p13/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0013.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p14",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.14"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第14葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p14/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p14/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0014.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p15",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.15"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第15葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p15/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p15/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0015.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p16",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.16"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第16葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p16/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p16/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0016.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p17",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.17"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第17葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p17/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p17/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0017.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p18",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.18"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第18葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p18/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p18/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0018.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p19",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.19"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第19葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p19/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p19/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0019.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p20",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.20"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第20葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p20/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p20/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0020.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p21",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.21"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第21葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p21/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p21/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0021.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p22",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.22"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第22葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p22/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p22/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0022.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p23",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.23"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第23葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p23/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p23/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0023.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p24",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.24"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第24葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p24/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p24/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0024.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p25",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.25"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第25葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p25/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p25/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0025.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p26",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.26"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第26葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p26/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p26/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0026.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p27",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.27"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第27葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p27/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p27/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0027.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p28",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.28"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第28葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p28/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p28/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0028.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p29",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.29"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第29葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p29/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p29/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0029.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p29"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p30",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.30"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第30葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p30/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p30/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0030.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p31",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.31"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第31葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p31/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p31/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0031.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p32",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.32"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第32葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p32/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p32/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0032.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p32"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p33",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.33"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第33葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p33/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p33/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0033.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p33"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p34",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.34"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第34葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p34/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p34/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0034.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p34"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p35",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.35"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第35葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p35/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p35/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0035.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p35"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p36",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.36"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第36葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p36/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p36/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0036.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p36"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p37",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.37"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第37葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p37/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p37/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0037.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p37"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p38",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.38"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第38葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p38/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p38/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0038.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p38"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p39",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.39"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第39葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p39/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p39/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0039.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p39"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p40",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.40"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第40葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p40/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p40/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0040.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p40"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p41",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.41"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第41葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p41/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p41/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0041.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p41"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p42",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.42"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第42葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p42/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p42/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0042.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p42"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p43",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.43"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第43葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p43/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p43/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0043.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p44",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.44"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第44葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p44/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p44/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0044.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p44"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p45",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.45"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第45葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p45/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p45/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0045.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p45"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p46",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.46"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第46葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p46/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p46/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0046.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p46"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p47",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.47"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第47葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p47/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p47/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0047.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p47"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p48",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.48"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第48葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p48/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p48/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0048.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p48"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p49",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.49"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第49葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p49/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p49/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0049.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p49"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p271",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.271"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第271葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p271/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p271/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0271.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p271"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p272",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.272"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第272葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p272/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p272/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0272.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p272"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p273",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.273"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第273葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p273/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p273/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0273.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p273"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p274",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.274"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第274葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p274/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p274/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0274.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p274"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p275",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.275"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第275葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p275/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p275/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0275.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p275"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p276",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.276"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第276葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p276/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p276/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0276.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p276"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p277",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.277"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第277葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p277/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p277/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0277.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p277"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p278",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.278"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第278葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p278/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p278/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0278.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p278"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p279",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.279"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第279葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p279/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p279/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0279.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p279"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p280",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.280"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第280葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p280/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p280/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0280.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p280"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p281",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.281"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第281葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p281/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p281/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0281.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p281"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p282",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.282"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第282葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p282/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p282/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0282.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p282"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p283",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.283"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第283葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p283/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p283/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0283.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p283"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p284",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.284"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第284葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p284/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p284/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0284.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p284"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p285",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.285"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第285葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p285/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p285/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0285.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p285"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p286",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.286"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第286葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p286/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p286/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0286.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p286"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p287",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.287"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第287葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p287/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p287/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0287.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p287"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p288",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.288"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第288葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p288/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p288/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0288.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p288"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p289",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.289"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第289葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p289/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p289/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0289.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p289"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p290",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.290"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第290葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p290/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p290/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0290.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p290"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p291",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.291"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第291葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p291/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p291/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0291.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p291"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p292",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.292"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第292葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p292/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p292/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0292.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p292"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p293",
+      "type": "Canvas",
+      "label": {
+        "zh-CN": [
+          "杨藏本·梦稿本 p.293"
+        ],
+        "ja": [
+          "杨藏本·梦稿本 第293葉"
+        ]
+      },
+      "width": 1696,
+      "height": 2400,
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p293/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p293/page/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/images/menggao/page_0293.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1696,
+                "height": 2400
+              },
+              "target": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/menggao/canvas/p293"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
