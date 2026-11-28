@@ -7,6 +7,7 @@
 <script src="./vendor/openseadragon.min.js"></script>
 <script src="./cite.js"></script>
 <script src="./changelog.js"></script>
+<script src="./edition_info.js"></script>
 <style>
   :root {
     --washi: #f7f4ee;
@@ -212,9 +213,24 @@
   .cat-title { font-size: 15.5px; font-weight: 700; margin: 0 0 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .cat-id { font-family: "SF Mono", Menlo, monospace; font-size: 11px; color: var(--stone); font-weight: 400; }
   .cat-desc { margin: 0; font-size: 13px; color: var(--sumi-soft); line-height: 1.6; }
-  .cat-meta { margin-top: 7px; font-family: var(--sans); font-size: 12px; color: var(--stone); display: flex; gap: 12px; flex-wrap: wrap; }
-  .cat-meta a { color: var(--cinnabar); text-decoration: none; }
+  .cat-meta { margin-top: 7px; font-family: var(--sans); font-size: 12px; color: var(--stone); display: flex; gap: 5px 12px; flex-wrap: wrap; }
+  .cat-meta a { color: var(--cinnabar); text-decoration: none; white-space: nowrap; }
   .cat-meta a:hover { text-decoration: underline; }
+  .cat-bib {
+    margin-top: 5px; font-family: var(--sans); font-size: 11.5px; color: #5b5349;
+    line-height: 1.5; display: flex; flex-wrap: wrap; gap: 2px 6px;
+  }
+  .cat-bib .bib-sep { color: var(--stone); }
+  .cat-info-btn {
+    border: none; background: transparent; padding: 0; font-family: inherit; font-size: inherit;
+    color: var(--cinnabar); cursor: pointer; font-weight: 500; white-space: nowrap;
+  }
+  .cat-info-btn:hover { text-decoration: underline; }
+  .cat-banner {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 8px 12px; margin-bottom: 11px; background: #f2ede3; border-left: 3px solid var(--cinnabar);
+    border-radius: 4px; font-family: var(--sans); font-size: 12px; color: var(--sumi-soft);
+  }
   .sub-btn {
     background: transparent; color: var(--sumi-soft); border: 1px solid rgba(42, 35, 29, 0.25);
     padding: 7px 12px; border-radius: 4px; font-family: var(--sans); font-size: 12.5px; white-space: nowrap; flex-shrink: 0;
@@ -486,6 +502,9 @@ const I18N = {
     missing: "未检出（此本缺该回，或该处不在公开范围内）",
     folioFmt: (p) => `第 ${p} 页`,
     openBook: "打开原页",
+    bibBtn: "书志详情",
+    bibAllBtn: "早期十二种版本书志总谱 ↗",
+    bibBanner: "各底本附早期十二种版本书志考证（区分原本与影印）",
     legSame: "同字", legDiff: "异文", legAligned: "推定对应",
     legSameFull: "红框：与检索句相同的字（繁简、异体视为同字）",
     legDiffFull: "金框：与检索句不同的字（异文，或 OCR 误识）",
@@ -564,6 +583,9 @@ const I18N = {
     missing: "該当なし（この本の欠回、または公開範囲外）",
     folioFmt: (p) => `第 ${p} 葉`,
     openBook: "原葉を開く",
+    bibBtn: "書誌詳細",
+    bibAllBtn: "早期十二種 書誌一覧 ↗",
+    bibBanner: "早期十二種の書誌データを収録（原本・影印を区別して著録）",
     legSame: "一致", legDiff: "異文", legAligned: "対応推定",
     legSameFull: "朱枠：検索語句と一致する字（繁簡・異体字は同字として扱う）",
     legDiffFull: "金枠：検索語句と異なる字（異文、または OCR の誤読）",
@@ -1253,6 +1275,7 @@ function applyLangUI() {
   document.getElementById('queriesInput').placeholder = t.placeholder;
   document.getElementById('boxBtn').textContent = SHOW_BOXES ? t.boxOn : t.boxOff;
   if (window.HLMChangelog) HLMChangelog.setLang(LANG);
+  if (window.HLMEditionInfo) HLMEditionInfo.setLang(LANG);
   updateStageCaption();
 
   document.getElementById('presetBar').innerHTML = t.presets.map((lbl, i) =>
@@ -1363,10 +1386,12 @@ function showLoadError() {
 async function boot() {
   applyLangUI();
   applyCols();
+  const bibReady = window.HLMEditionInfo ? HLMEditionInfo.init('./data/editions_metadata.json') : Promise.resolve(null);
   try {
     const res = await fetch('./data/showcase_bundle.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     BUNDLE = await res.json();
+    await bibReady;
   } catch (e) {
     LOAD_FAILED = true;
     showLoadError();
@@ -1428,15 +1453,24 @@ function toggleWit(edId) {
 
 function renderCatalog() {
   const t = I18N[LANG];
-  document.getElementById('catalogList').innerHTML = BUNDLE.editions.map(ed => {
+  const hasBib = !!(window.HLMEditionInfo && HLMEditionInfo.all().length);
+  const banner = hasBib ? `<div class="cat-banner">
+    <span>${esc(t.bibBanner)}</span>
+    <button type="button" class="cat-info-btn" onclick="openBibModal('jiaxu')">${esc(t.bibAllBtn)}</button>
+  </div>` : '';
+  document.getElementById('catalogList').innerHTML = banner + BUNDLE.editions.map(ed => {
     const title = LANG === 'ja' ? ed.ja_name : ed.zh_name;
     const desc = LANG === 'ja' ? ed.ja_desc : ed.zh_desc;
+    const brief = hasBib ? HLMEditionInfo.briefHtml(ed.ed_id, LANG) : '';
+    const bibBtn = hasBib ? `<button type="button" class="cat-info-btn" onclick="openBibModal('${ed.ed_id}')">${esc(t.bibBtn)}</button>` : '';
     const miradorUrl = `https://projectmirador.org/embed/?iiif-content=${encodeURIComponent(ed.manifest_url)}`;
     return `<div class="cat-item">
       <div>
         <h3 class="cat-title">${esc(title)} <span class="cat-id">${ed.mid}</span></h3>
         <p class="cat-desc">${esc(desc)}</p>
+        ${brief}
         <div class="cat-meta">
+          ${bibBtn}
           <a href="${ed.manifest_url}" target="_blank" rel="noopener">IIIF v3 Manifest ↗</a>
           <a href="${miradorUrl}" target="_blank" rel="noopener">Mirador 3 ↗</a>
         </div>
@@ -1444,6 +1478,13 @@ function renderCatalog() {
       <button class="sub-btn" onclick="openBookLeaf('${ed.ed_id}', ${ed.first_leaf})">${esc(t.openBook)}</button>
     </div>`;
   }).join('');
+}
+
+function openBibModal(edId) {
+  if (!window.HLMEditionInfo) return;
+  const manifestByEd = {};
+  (BUNDLE && BUNDLE.editions || []).forEach(e => { manifestByEd[e.ed_id] = e.manifest_url; });
+  HLMEditionInfo.open(edId, LANG, { mode: 'public', manifestUrl: manifestByEd[edId], manifestByEd });
 }
 
 function executeBatchSearch(initial) {
