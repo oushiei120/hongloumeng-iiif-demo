@@ -6,6 +6,7 @@
 <title>红楼梦诸本对校 · IIIF 善本影像检索</title>
 <script src="./vendor/openseadragon.min.js"></script>
 <script src="./cite.js"></script>
+<script src="./changelog.js"></script>
 <style>
   :root {
     --washi: #f7f4ee;
@@ -363,6 +364,7 @@
     <span class="pilot-tag" data-tx="pilot"></span>
   </div>
   <div class="nav-bar">
+    <button type="button" class="ver-pill" id="verBtn" onclick="HLMChangelog.open(LANG)" hidden></button>
     <button class="ghost-action" onclick="openHelp()" data-tx="help"></button>
     <div class="seg-group" role="group" aria-label="Language">
       <button class="seg-btn" id="langZh" onclick="setLang('zh')" lang="zh-CN">简体中文</button>
@@ -1064,6 +1066,7 @@ function applyLangUI() {
   applyDataT(document);
   document.getElementById('queriesInput').placeholder = t.placeholder;
   document.getElementById('boxBtn').textContent = SHOW_BOXES ? t.boxOn : t.boxOff;
+  if (window.HLMChangelog) HLMChangelog.setLang(LANG);
   updateStageCaption();
 
   document.getElementById('presetBar').innerHTML = t.presets.map((lbl, i) =>
@@ -1209,6 +1212,9 @@ async function boot() {
   HLMCite.init('./data/cite_config.json');
   applyLangUI();
   const at = HLMCite.parseAt(location.search);     // 引用链接：直接打开所引的页并框出位置
+  if (window.HLMChangelog) {
+    HLMChangelog.init({ url: './data/releases.json', badgeEl: document.getElementById('verBtn'), lang: LANG, isDeepLink: !!at });
+  }
   if (at && !q0) {
     document.getElementById('queriesInput').value = '';
     document.getElementById('apparatusList').innerHTML = `<div class="notice">${esc(I18N[LANG].citedNote)}</div>`;
