@@ -3839,5 +3839,527 @@
         }
       ]
     }
+  ],
+  "structures": [
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/range/front",
+      "type": "Range",
+      "label": {
+        "zh-CN": [
+          "序言・目录"
+        ],
+        "ja": [
+          "序・目録"
+        ]
+      },
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p9",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p10",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p11",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p12",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p13",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p14",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p15",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p16",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p17",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p18",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p19",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p20",
+          "type": "Canvas"
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/range/ch1",
+      "type": "Range",
+      "label": {
+        "zh-CN": [
+          "第1回"
+        ],
+        "ja": [
+          "第1回"
+        ]
+      },
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p21",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p22",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p23",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p24",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p25",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p26",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p27",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p28",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p29",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p30",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p31",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p32",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p33",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p34",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p35",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p36",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p37",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p38",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p39",
+          "type": "Canvas"
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/range/ch2",
+      "type": "Range",
+      "label": {
+        "zh-CN": [
+          "第2回"
+        ],
+        "ja": [
+          "第2回"
+        ]
+      },
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p40",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p41",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p42",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p43",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p44",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p45",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p46",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p47",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p48",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p49",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p50",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p51",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p52",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p53",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p54",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p55",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p56",
+          "type": "Canvas"
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/range/ch3",
+      "type": "Range",
+      "label": {
+        "zh-CN": [
+          "第3回"
+        ],
+        "ja": [
+          "第3回"
+        ]
+      },
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p57",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p58",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p59",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p60",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p61",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p62",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p63",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p64",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p65",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p66",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p67",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p68",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p69",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p70",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p71",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p72",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p73",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p74",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p75",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p76",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p77",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p78",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p79",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p80",
+          "type": "Canvas"
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/range/ch23",
+      "type": "Range",
+      "label": {
+        "zh-CN": [
+          "第23回"
+        ],
+        "ja": [
+          "第23回"
+        ]
+      },
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p432",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p433",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p434",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p435",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p436",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p437",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p438",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p439",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p440",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p441",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p442",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p443",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p444",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p445",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p446",
+          "type": "Canvas"
+        }
+      ]
+    },
+    {
+      "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/range/ch24",
+      "type": "Range",
+      "label": {
+        "zh-CN": [
+          "第24回"
+        ],
+        "ja": [
+          "第24回"
+        ]
+      },
+      "items": [
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p447",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p448",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p449",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p450",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p451",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p452",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p453",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p454",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p455",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p456",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p457",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p458",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p459",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p460",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p461",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p462",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p463",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p464",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p465",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p466",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p467",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://oushiei120.github.io/hongloumeng-iiif-demo/guji/iiif/3/qixu/canvas/p468",
+          "type": "Canvas"
+        }
+      ]
+    }
   ]
 }

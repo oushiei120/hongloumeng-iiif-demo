@@ -659,7 +659,31 @@ function getBox(flat, idx) {
   return [flat[b], flat[b + 1], flat[b + 2], flat[b + 3]];
 }
 
-function searchInEdition(edId, query) {
+function getChapter(edId, pno, charPos = 0) {
+  const rows = (BUNDLE && BUNDLE.chapters && BUNDLE.chapters[edId]) || [];
+  for (const [ch, sp, sc, ep, ec] of rows) {
+    if ((pno > sp || (pno === sp && charPos >= sc)) && (pno < ep || (pno === ep && charPos <= ec))) return ch;
+  }
+  return 0;
+}
+
+function editionHasChapter(edId, ch) {
+  if (!ch || ch <= 0) return true;
+  const rows = (BUNDLE && BUNDLE.chapters && BUNDLE.chapters[edId]) || [];
+  if (!rows.length) return true;
+  for (const r of rows) {
+    if (r[0] === ch) return true;
+    if ((ch === 17 || ch === 18) && (r[0] === 17 || r[0] === 18)) return true;
+  }
+  return false;
+}
+
+function chaptersCompatible(c1, c2) {
+  if (!c1 || !c2) return c1 === c2;
+  return c1 === c2 || (Math.min(c1, c2) === 17 && Math.max(c1, c2) === 18);
+}
+
+function searchInEdition(edId, query, maxHits = 4) {
   const pages = PAGES_INDEX[edId] || [];
   const qNorm = normStr(query);
   const qLen = qNorm.length;
@@ -690,11 +714,13 @@ function searchInEdition(edId, query) {
           cBoxes.push({ c: origCh, xywh: getBox(pg.flat, k), v: origCh !== qCh });
         }
         hits.push(packHit(edMeta, pg, f, endI, combOrig, cBoxes, 1.0, f, sliceEnd));
-        if (hits.length >= 3) return hits;
+        if (hits.length >= Math.max(maxHits * 3, 12)) break;
         pos = f + qLen;
       }
+      if (hits.length >= Math.max(maxHits * 3, 12)) break;
     }
-    return hits;
+    hits.sort((a, b) => ((b.chapter > 0 ? 1 : 0) - (a.chapter > 0 ? 1 : 0)) || (a.page_no - b.page_no) || (a.char_start - b.char_start));
+    return hits.slice(0, maxHits);
   }
 
   // 长句跨异文二阶段对齐
@@ -770,13 +796,16 @@ function searchInEdition(edId, query) {
     }
   }
 
-  cands.sort((a, b) => b[0] - a[0]);
+  cands.sort((a, b) => {
+    const ba = a[2].chapter > 0 ? 1 : 0, bb = b[2].chapter > 0 ? 1 : 0;
+    return (bb - ba) || (b[0] - a[0]);
+  });
   const seen = new Set();
   for (const [, pno, rec] of cands) {
     if (seen.has(pno)) continue;
     seen.add(pno);
     hits.push(rec);
-    if (hits.length >= 3) break;
+    if (hits.length >= maxHits) break;
   }
   return hits;
 }
@@ -785,15 +814,17 @@ function packHit(edMeta, pg, absS, absE, combOrig, cBoxes, score, charStart, cha
   const xs = cBoxes.flatMap(b => [b.xywh[0], b.xywh[0] + b.xywh[2]]);
   const ys = cBoxes.flatMap(b => [b.xywh[1], b.xywh[1] + b.xywh[3]]);
   const rxywh = [Math.min(...xs), Math.min(...ys), Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)];
+  const cs = charStart ?? absS;
   return {
     ed_id: edMeta.ed_id,
     mid: edMeta.mid,
     zh_name: edMeta.zh_name,
     ja_name: edMeta.ja_name,
     page_no: pg.pno,
+    chapter: getChapter(edMeta.ed_id, pg.pno, cs),
     banxin: pg.banxin,
     hit_type: 'direct',
-    char_start: charStart ?? absS,
+    char_start: cs,
     char_end: charEnd ?? absE,
     score: Math.round(score * 100) / 100,
     context_left: combOrig.slice(Math.max(0, absS - 10), absS),
@@ -824,13 +855,15 @@ function bestAnchorWindow(needle, hay) {
   return (bestRes && bestRes.tot >= 4) ? bestRes : null;
 }
 
-function inferAlignedHit(anchorHit, dstEdId, qLen) {
+function inferAlignedHit(anchorHit, dstEdId, qLen, targetCh = null) {
   if (!BUNDLE.segments || !BUNDLE.alignments) return null;
   const srcEd = anchorHit.ed_id;
   const srcPno = anchorHit.page_no;
   const cs = anchorHit.char_start || 0;
   const ce = anchorHit.char_end || (cs + Math.max(2, qLen));
   const midPos = (cs + ce) / 2;
+  const reqCh = (targetCh && targetCh > 0) ? targetCh : (anchorHit.chapter || getChapter(srcEd, srcPno, Math.floor(midPos)));
+  if (reqCh > 0 && !editionHasChapter(dstEdId, reqCh)) return null;
 
   const segs = (BUNDLE.segments[srcEd] || {})[String(srcPno)];
   const srcEntry = PAGE_BY_NO[`${srcEd}:${srcPno}`];
@@ -852,16 +885,18 @@ function inferAlignedHit(anchorHit, dstEdId, qLen) {
   const [dstPno, dstSpan, dstCs, dstCe, sharedNg, conf] = alignRec;
   const dstEntry = PAGE_BY_NO[`${dstEdId}:${dstPno}`];
   if (!dstEntry) return null;
+  const dstSegCh = getChapter(dstEdId, dstPno, Math.floor((dstCs + dstCe) / 2));
+  if (reqCh > 0 && dstSegCh > 0 && !chaptersCompatible(reqCh, dstSegCh)) return null;
 
   const srcPages = PAGES_INDEX[srcEd];
   const prevSrc = (srcEntry.idx > 0 && srcPages[srcEntry.idx - 1].pno === srcPno - 1) ? srcPages[srcEntry.idx - 1] : null;
   const nextSrc = (srcEntry.idx + 1 < srcPages.length && srcPages[srcEntry.idx + 1].pno === srcPno + 1) ? srcPages[srcEntry.idx + 1] : null;
-  const prePad = prevSrc ? prevSrc.norm.slice(-26) : '';
-  const postPad = nextSrc ? nextSrc.norm.slice(0, 26) : '';
+  const prePad = prevSrc ? prevSrc.norm.slice(-40) : '';
+  const postPad = nextSrc ? nextSrc.norm.slice(0, 40) : '';
   const extSrcNorm = normStr(prePad + srcEntry.pg.norm + postPad);
   const adjCs = prePad.length + cs, adjCe = prePad.length + ce;
-  const leftCtx = extSrcNorm.slice(Math.max(0, adjCs - 22), adjCs);
-  const rightCtx = extSrcNorm.slice(adjCe, adjCe + 22);
+  const leftCtx = extSrcNorm.slice(Math.max(0, adjCs - 36), adjCs);
+  const rightCtx = extSrcNorm.slice(adjCe, adjCe + 36);
 
   const dstPages = PAGES_INDEX[dstEdId];
   const dstPg = dstEntry.pg;
@@ -892,7 +927,7 @@ function inferAlignedHit(anchorHit, dstEdId, qLen) {
     const lLast = lMatch.ms[lMatch.ms.length - 1];
     const lEnd = lMatch.s + lLast.b + lLast.size;
     const rFrom = Math.max(0, lEnd - 4);
-    const rTo = Math.min(corrNorm.length, lEnd + Math.max(46, qLen * 3 + 22));
+    const rTo = Math.min(corrNorm.length, lEnd + Math.max(60, qLen * 3 + 36));
     const subR = bestAnchorWindow(rightCtx, corrNorm.slice(rFrom, rTo));
     if (subR) rMatch = { s: rFrom + subR.s, ms: subR.ms };
   } else {
@@ -930,7 +965,18 @@ function inferAlignedHit(anchorHit, dstEdId, qLen) {
     spanS = Math.max(0, spanE - Math.max(2, qLen));
     precRank = 1;
   } else {
-    return null;
+    if (reqCh > 0 && chaptersCompatible(reqCh, dstSegCh) && (sharedNg >= 4 || conf >= 0.35)) {
+      const segLen = Math.max(1, chosenSeg[2] - chosenSeg[1]);
+      const rel = Math.max(0, Math.min(1, (midPos - chosenSeg[1]) / segLen));
+      const estDstK = Math.round(dstCs + rel * Math.max(0, dstCe - dstCs));
+      let corrEst = corrMap.findIndex(([pgI, kI]) => pgI.pno === dstPno && kI >= estDstK);
+      if (corrEst < 0) corrEst = 0;
+      spanS = Math.max(0, corrEst - Math.max(1, Math.floor(qLen / 2)));
+      spanE = Math.min(corrMap.length, spanS + Math.max(2, qLen));
+      precRank = 0;
+    } else {
+      return null;
+    }
   }
   if (spanE <= spanS) spanE = Math.min(corrMap.length, spanS + Math.max(2, qLen));
 
@@ -961,6 +1007,7 @@ function inferAlignedHit(anchorHit, dstEdId, qLen) {
     zh_name: edMeta.zh_name,
     ja_name: edMeta.ja_name,
     page_no: targetPno,
+    chapter: getChapter(dstEdId, targetPno, corrMap[spanS][1]),
     banxin: targetPg.banxin,
     hit_type: 'aligned',
     via_ed: srcEd,
@@ -1222,21 +1269,70 @@ function executeBatchSearch(initial) {
   const results = [];
   for (const q of queries.slice(0, 50)) {
     const byEd = {};
-    const anchors = [];
+    let anchors = [];
     const qLen = normStr(q).length;
+    const fetchMax = qLen >= 5 ? 4 : 3;
     for (const ed of BUNDLE.editions) {
       if (!SELECTED_EDS.has(ed.ed_id)) continue;
-      const hs = searchInEdition(ed.ed_id, q);
+      const hs = searchInEdition(ed.ed_id, q, fetchMax);
       byEd[ed.ed_id] = hs;
       if (hs.length) anchors.push(...hs);
     }
+
+    let targetCh = null;
+    if (qLen >= 5 && anchors.length) {
+      const votes = {};
+      for (const ed of BUNDLE.editions) {
+        const hs = (byEd[ed.ed_id] || []).filter(h => (h.chapter || 0) > 0 && h.score >= 0.65);
+        if (!hs.length) continue;
+        const topH = hs.reduce((a, b) => b.score > a.score ? b : a);
+        const ck = (topH.chapter === 17 || topH.chapter === 18) ? 17 : topH.chapter;
+        (votes[ck] ||= []).push(topH.score);
+      }
+      const ranked = Object.entries(votes).sort((a, b) => {
+        const sa = a[1].reduce((x, y) => x + y, 0), sb = b[1].reduce((x, y) => x + y, 0);
+        return (sb - sa) || (b[1].length - a[1].length) || (Math.max(...b[1]) - Math.max(...a[1]));
+      });
+      if (ranked.length) {
+        const [bestCkStr, bestScores] = ranked[0];
+        const totW = Object.values(votes).flat().reduce((x, y) => x + y, 0);
+        const sumBest = bestScores.reduce((x, y) => x + y, 0);
+        const hiCnt = bestScores.filter(s => s >= 0.75).length;
+        if ((bestScores.length >= 2 && (sumBest >= totW * 0.5 || hiCnt >= 2)) || (ranked.length === 1 && Math.max(...bestScores) >= 0.8)) {
+          targetCh = Number(bestCkStr);
+        }
+      }
+    }
+
+    if (targetCh !== null) {
+      const filteredAnchors = [];
+      for (const ed of BUNDLE.editions) {
+        if (!byEd[ed.ed_id]) continue;
+        const cur = byEd[ed.ed_id];
+        let kept;
+        if (!editionHasChapter(ed.ed_id, targetCh)) {
+          kept = cur.filter(h => h.score >= 0.92).slice(0, 3);
+        } else {
+          const sameCh = cur.filter(h => chaptersCompatible(h.chapter || 0, targetCh));
+          kept = sameCh.length ? sameCh.slice(0, 3) : cur.filter(h => h.score >= 0.92).slice(0, 3);
+        }
+        byEd[ed.ed_id] = kept;
+        filteredAnchors.push(...kept.filter(h => (h.chapter || 0) > 0 && chaptersCompatible(h.chapter || 0, targetCh)));
+      }
+      anchors = filteredAnchors;
+    } else {
+      for (const ed of BUNDLE.editions) {
+        if (byEd[ed.ed_id]) byEd[ed.ed_id] = byEd[ed.ed_id].slice(0, 3);
+      }
+    }
+
     if (anchors.length && BUNDLE.alignments) {
       anchors.sort((a, b) => b.score - a.score);
       for (const ed of BUNDLE.editions) {
         if (!SELECTED_EDS.has(ed.ed_id) || (byEd[ed.ed_id] && byEd[ed.ed_id].length)) continue;
         let bestInf = null;
         for (const anc of anchors) {
-          const inf = inferAlignedHit(anc, ed.ed_id, qLen);
+          const inf = inferAlignedHit(anc, ed.ed_id, qLen, targetCh);
           if (inf && (!bestInf || inf._rank > bestInf._rank)) bestInf = inf;
         }
         if (bestInf) {
@@ -1247,7 +1343,7 @@ function executeBatchSearch(initial) {
     }
     let total = 0;
     Object.values(byEd).forEach(arr => { total += arr.length; });
-    results.push({ query: q, total_hits: total, by_edition: byEd });
+    results.push({ query: q, target_chapter: targetCh, total_hits: total, by_edition: byEd });
   }
   const elapsed = (performance.now() - t0).toFixed(1);
   LAST_RESULTS = { query_count: results.length, elapsed_ms: elapsed, results };
@@ -1297,9 +1393,12 @@ function renderApparatus(data) {
         const shortWit = editionLabel(ed).replace(/本$/, '');
         const arr = item.by_edition[ed.ed_id];
         if (!arr.length) {
+          const chMiss = (item.target_chapter && !editionHasChapter(ed.ed_id, item.target_chapter))
+            ? (LANG === 'ja' ? `該当なし（第${item.target_chapter}回欠）` : `未检出（此本缺第 ${item.target_chapter} 回）`)
+            : t.missing;
           html += `<tr class="rdg-row is-missing">
             <td class="rdg-wit"><span class="wit-stamp is-missing">${esc(shortWit)}</span></td>
-            <td class="rdg-text miss">${esc(t.missing)}</td>
+            <td class="rdg-text miss">${esc(chMiss)}</td>
           </tr>`;
           return;
         }
@@ -1313,13 +1412,14 @@ function renderApparatus(data) {
               : (cb.v ? `<span class="ch-diff">${esc(cb.c)}</span>` : `<span>${esc(cb.c)}</span>`)
           ).join('');
           const bxHtml = h.banxin ? `<span class="rdg-banxin">${esc(h.banxin)}</span>` : '';
+          const chTag = h.chapter != null ? (h.chapter > 0 ? ` · 第${h.chapter}回` : (LANG === 'ja' ? ' · 序目' : ' · 序目')) : '';
 
           html += `<tr class="rdg-row" tabindex="0" role="button" data-key="${qi}:${ed.ed_id}:${hi}"
               onclick="openHit(${qi}, '${ed.ed_id}', ${hi})"
               onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }">
             <td class="rdg-wit">
               <span class="${stampCls}">${esc(shortWit)}</span>
-              <span class="wit-folio">${esc(t.folioFmt(h.page_no))}</span>
+              <span class="wit-folio">${esc(t.folioFmt(h.page_no) + chTag)}</span>
             </td>
             <td class="rdg-text">
               ${badgeHtml}<span class="ctx">${esc(h.context_left)}</span>${midHtml}<span class="ctx">${esc(h.context_right)}</span>${bxHtml}
