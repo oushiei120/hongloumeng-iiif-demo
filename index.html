@@ -492,6 +492,8 @@ const I18N = {
     legAlignedFull: "蓝虚框：字面未命中，据其他底本的上下文推定的对应位置",
     alignBadge: (via, p) => `推定对应 · 据${via.replace(/本$/, '')}本第 ${p} 页`,
     alignHud: "推定对应页",
+    rangeBadge: (rs, re, p) => (rs && re && rs < re) ? `推算区间 · 第 ${rs}–${re} 页（约第 ${p} 页，请核原图）` : `推算区间 · 约第 ${p} 页（请核原图）`,
+    rangeHud: "推算区间",
     loading: "正在加载影像…", imgFail: "影像加载失败",
     focus: "回到命中位置", mirador: "在 Mirador 中打开整本",
     prevLeaf: "上一页", nextLeaf: "下一页", zoomIn: "放大", zoomOut: "缩小", pageInput: "输入 PDF 页序后回车跳转",
@@ -568,6 +570,8 @@ const I18N = {
     legAlignedFull: "青破線：文字列は一致しないが、他本の前後文から推定した対応箇所",
     alignBadge: (via, p) => `対応推定 · ${via.replace(/本$/, '')}本 第${p}葉より`,
     alignHud: "対応葉推定",
+    rangeBadge: (rs, re, p) => (rs && re && rs < re) ? `推定区間 · 第${rs}〜${re}葉（第${p}葉付近・原本要確認）` : `推定区間 · 第${p}葉付近（原本要確認）`,
+    rangeHud: "推定区間",
     loading: "画像を読み込み中…", imgFail: "画像を読み込めませんでした",
     focus: "該当箇所に戻る", mirador: "Mirador で全巻を開く",
     prevLeaf: "前の葉", nextLeaf: "次の葉", zoomIn: "拡大", zoomOut: "縮小", pageInput: "PDF 頁順を入力して Enter で移動",
@@ -683,6 +687,21 @@ function editionHasChapter(edId, ch) {
 function chaptersCompatible(c1, c2) {
   if (!c1 || !c2) return c1 === c2;
   return c1 === c2 || (Math.min(c1, c2) === 17 && Math.max(c1, c2) === 18);
+}
+
+function chapterBounds(edId, ch) {
+  if (!ch || ch <= 0) return null;
+  const rows = (BUNDLE && BUNDLE.chapters && BUNDLE.chapters[edId]) || [];
+  for (const r of rows) {
+    if (r[0] === ch) return [r[1], r[3]];
+  }
+  if (ch === 17 || ch === 18) {
+    const alt = ch === 17 ? 18 : 17;
+    for (const r of rows) {
+      if (r[0] === alt) return [r[1], r[3]];
+    }
+  }
+  return null;
 }
 
 function searchInEdition(edId, query, maxHits = 4) {
@@ -857,6 +876,167 @@ function bestAnchorWindow(needle, hay) {
   return (bestRes && bestRes.tot >= 4) ? bestRes : null;
 }
 
+function inferRangeFallback(anchorHit, dstEdId, qLen, reqCh) {
+  if (!reqCh || reqCh <= 0 || !editionHasChapter(dstEdId, reqCh)) return null;
+  const srcEd = anchorHit.ed_id, srcPno = anchorHit.page_no;
+  const srcB = chapterBounds(srcEd, reqCh), dstB = chapterBounds(dstEdId, reqCh);
+  if (!srcB || !dstB) return null;
+  const [sSp, sEp] = srcB, [dSp, dEp] = dstB;
+
+  let leftAnc = null;
+  for (let p = srcPno; p >= sSp; p--) {
+    const sgs = (BUNDLE.segments[srcEd] || {})[String(p)] || [];
+    for (let j = sgs.length - 1; j >= 0; j--) {
+      const ar = BUNDLE.alignments[`${srcEd}:${p}:${sgs[j][0]}:${dstEdId}`];
+      if (ar && ar[0] >= dSp && ar[0] <= dEp) { leftAnc = [p, ar[0]]; break; }
+    }
+    if (leftAnc) break;
+  }
+  let rightAnc = null;
+  for (let p = srcPno; p <= sEp; p++) {
+    const sgs = (BUNDLE.segments[srcEd] || {})[String(p)] || [];
+    for (let j = 0; j < sgs.length; j++) {
+      const ar = BUNDLE.alignments[`${srcEd}:${p}:${sgs[j][0]}:${dstEdId}`];
+      if (ar && ar[0] >= dSp && ar[0] <= dEp) { rightAnc = [p, ar[0]]; break; }
+    }
+    if (rightAnc) break;
+  }
+
+  const loSrc = leftAnc ? leftAnc[0] : sSp, loDst = leftAnc ? leftAnc[1] : dSp;
+  const hiSrc = rightAnc ? rightAnc[0] : sEp, hiDst = rightAnc ? rightAnc[1] : dEp;
+  let rangeStart = Math.max(dSp, Math.min(loDst, hiDst));
+  let rangeEnd = Math.min(dEp, Math.max(loDst, hiDst));
+  if (rangeStart > rangeEnd) { rangeStart = dSp; rangeEnd = dEp; }
+
+  const frac = hiSrc > loSrc ? Math.max(0, Math.min(1, (srcPno - loSrc) / (hiSrc - loSrc))) : 0.5;
+  const estPno = Math.max(rangeStart, Math.min(rangeEnd, Math.round(rangeStart + frac * (rangeEnd - rangeStart))));
+
+  const srcEntry = PAGE_BY_NO[`${srcEd}:${srcPno}`];
+  if (rangeEnd - rangeStart <= 6 && srcEntry) {
+    const cs = anchorHit.char_start || 0, ce = anchorHit.char_end || (cs + Math.max(2, qLen));
+    const srcPages = PAGES_INDEX[srcEd];
+    const prevSrc = (srcEntry.idx > 0 && srcPages[srcEntry.idx - 1].pno === srcPno - 1) ? srcPages[srcEntry.idx - 1] : null;
+    const nextSrc = (srcEntry.idx + 1 < srcPages.length && srcPages[srcEntry.idx + 1].pno === srcPno + 1) ? srcPages[srcEntry.idx + 1] : null;
+    const prePad = prevSrc ? prevSrc.norm.slice(-40) : '';
+    const postPad = nextSrc ? nextSrc.norm.slice(0, 40) : '';
+    const extSrc = normStr(prePad + srcEntry.pg.norm + postPad);
+    const lCtx = extSrc.slice(Math.max(0, prePad.length + cs - 36), prePad.length + cs);
+    const rCtx = extSrc.slice(prePad.length + ce, prePad.length + ce + 36);
+
+    let cNorm = '', cOrig = '';
+    const cMap = [];
+    for (let p = rangeStart; p <= rangeEnd; p++) {
+      const ent = PAGE_BY_NO[`${dstEdId}:${p}`];
+      if (ent && ent.pg.norm.length > 0) {
+        cNorm += normStr(ent.pg.norm);
+        cOrig += ent.pg.orig;
+        for (let k = 0; k < ent.pg.norm.length; k++) cMap.push([ent.pg, k]);
+      }
+    }
+    if (cMap.length) {
+      const lm = bestAnchorWindow(lCtx, cNorm);
+      let rm = lm ? null : bestAnchorWindow(rCtx, cNorm);
+      if (lm) {
+        const lLast = lm.ms[lm.ms.length - 1];
+        const lEnd = lm.s + lLast.b + lLast.size;
+        const rFrom = Math.max(0, lEnd - 4), rTo = Math.min(cNorm.length, lEnd + Math.max(60, qLen * 3 + 36));
+        const subR = bestAnchorWindow(rCtx, cNorm.slice(rFrom, rTo));
+        if (subR) rm = { s: rFrom + subR.s, ms: subR.ms };
+      }
+      if (lm || rm) {
+        let s0 = 0, e0 = 0, prec = 'left_anchor';
+        if (lm && rm) {
+          const lLast = lm.ms[lm.ms.length - 1], rFirst = rm.ms[0];
+          const gs = lm.s + lLast.b + lLast.size;
+          const ge = rm.s + rFirst.b - Math.min(rFirst.a, 4);
+          if (ge - gs > 0 && ge - gs <= Math.max(32, qLen * 3 + 12)) { s0 = gs; e0 = ge; prec = 'bracket'; }
+          else { s0 = Math.min(cMap.length - 1, gs); e0 = Math.min(cMap.length, s0 + Math.max(2, qLen)); }
+        } else if (lm) {
+          const lLast = lm.ms[lm.ms.length - 1];
+          s0 = Math.min(cMap.length - 1, lm.s + lLast.b + lLast.size + Math.min(6, lCtx.length - (lLast.a + lLast.size)));
+          e0 = Math.min(cMap.length, s0 + Math.max(2, qLen));
+        } else {
+          const rFirst = rm.ms[0];
+          e0 = Math.max(1, rm.s + rFirst.b - Math.min(6, rFirst.a));
+          s0 = Math.max(0, e0 - Math.max(2, qLen));
+          prec = 'right_anchor';
+        }
+        if (e0 <= s0) e0 = Math.min(cMap.length, s0 + Math.max(2, qLen));
+        const pC = {};
+        for (let i = s0; i < e0; i++) pC[cMap[i][0].pno] = (pC[cMap[i][0].pno] || 0) + 1;
+        const pBest = Number(Object.entries(pC).sort((a, b) => b[1] - a[1])[0][0]);
+        const tPg = PAGE_BY_NO[`${dstEdId}:${pBest}`].pg;
+        const cbx = [];
+        for (let i = s0; i < e0; i++) {
+          if (cMap[i][0].pno === pBest && cMap[i][1] < tPg.norm.length) {
+            cbx.push({ c: cOrig[i], xywh: getBox(tPg.flat, cMap[i][1]), v: false, a: true });
+          }
+        }
+        if (cbx.length) {
+          const edMeta = BUNDLE.editions.find(e => e.ed_id === dstEdId);
+          const xs = cbx.flatMap(b => [b.xywh[0], b.xywh[0] + b.xywh[2]]);
+          const ys = cbx.flatMap(b => [b.xywh[1], b.xywh[1] + b.xywh[3]]);
+          return {
+            ed_id: edMeta.ed_id, mid: edMeta.mid, zh_name: edMeta.zh_name, ja_name: edMeta.ja_name,
+            page_no: pBest, chapter: getChapter(dstEdId, pBest, cMap[s0][1]), banxin: tPg.banxin,
+            hit_type: 'aligned', align_precision: prec, page_range: [rangeStart, rangeEnd],
+            via_ed: srcEd, via_zh_name: anchorHit.zh_name, via_ja_name: anchorHit.ja_name, via_page: srcPno,
+            score: 0.55, _rank: (prec === 'bracket' ? 2 : 1) * 10000 + 5,
+            context_left: cOrig.slice(Math.max(0, s0 - 10), s0), matched_text: cOrig.slice(s0, e0),
+            context_right: cOrig.slice(e0, e0 + 12), canvas_w: tPg.w, canvas_h: tPg.h,
+            region_xywh: [Math.min(...xs), Math.min(...ys), Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)],
+            char_boxes: cbx,
+            img_url: `${BUNDLE.cos_base}/images/${edMeta.ed_id}/page_${String(pBest).padStart(4, '0')}.jpg`,
+            canvas_id: `${BUNDLE.public_iiif_base || BUNDLE.cos_base}/iiif/3/${edMeta.ed_id}/canvas/p${pBest}`,
+            manifest_url: edMeta.manifest_url
+          };
+        }
+      }
+    }
+  }
+
+  let chosenPno = null, bestDist = 1e9;
+  for (let p = rangeStart; p <= rangeEnd; p++) {
+    const ent = PAGE_BY_NO[`${dstEdId}:${p}`];
+    if (!ent) continue;
+    const d = Math.abs(p - estPno) + (!ent.pg.norm.length ? 1000 : 0);
+    if (d < bestDist) { bestDist = d; chosenPno = p; }
+  }
+  if (chosenPno === null) return null;
+  const tPg = PAGE_BY_NO[`${dstEdId}:${chosenPno}`].pg;
+  const nLen = tPg.norm.length;
+  let cbx = [], snipL = '', snipM = `[第${chosenPno}页]`, snipR = '';
+  if (nLen > 0) {
+    const spanW = Math.min(nLen, Math.max(4, Math.min(14, qLen)));
+    const sK = Math.max(0, Math.min(nLen - spanW, Math.floor(nLen / 2) - Math.floor(spanW / 2)));
+    const eK = Math.min(nLen, sK + spanW);
+    for (let k = sK; k < eK; k++) cbx.push({ c: tPg.orig[k], xywh: getBox(tPg.flat, k), v: false, a: true });
+    snipL = tPg.orig.slice(Math.max(0, sK - 8), sK);
+    snipM = tPg.orig.slice(sK, eK);
+    snipR = tPg.orig.slice(eK, eK + 10);
+  } else {
+    cbx = [{ c: '', xywh: [Math.round(tPg.w * 0.08), Math.round(tPg.h * 0.08), Math.round(tPg.w * 0.84), Math.round(tPg.h * 0.84)], v: false, a: true }];
+  }
+  if (!cbx.length) return null;
+  const edMeta = BUNDLE.editions.find(e => e.ed_id === dstEdId);
+  const xs = cbx.flatMap(b => [b.xywh[0], b.xywh[0] + b.xywh[2]]);
+  const ys = cbx.flatMap(b => [b.xywh[1], b.xywh[1] + b.xywh[3]]);
+  return {
+    ed_id: edMeta.ed_id, mid: edMeta.mid, zh_name: edMeta.zh_name, ja_name: edMeta.ja_name,
+    page_no: chosenPno, chapter: reqCh, banxin: tPg.banxin,
+    hit_type: 'aligned', align_precision: 'range', page_range: [rangeStart, rangeEnd],
+    via_ed: srcEd, via_zh_name: anchorHit.zh_name, via_ja_name: anchorHit.ja_name, via_page: srcPno,
+    score: 0.35, _rank: -5000,
+    context_left: snipL, matched_text: snipM, context_right: snipR,
+    canvas_w: tPg.w, canvas_h: tPg.h,
+    region_xywh: [Math.min(...xs), Math.min(...ys), Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)],
+    char_boxes: cbx,
+    img_url: `${BUNDLE.cos_base}/images/${edMeta.ed_id}/page_${String(chosenPno).padStart(4, '0')}.jpg`,
+    canvas_id: `${BUNDLE.public_iiif_base || BUNDLE.cos_base}/iiif/3/${edMeta.ed_id}/canvas/p${chosenPno}`,
+    manifest_url: edMeta.manifest_url
+  };
+}
+
 function inferAlignedHit(anchorHit, dstEdId, qLen, targetCh = null) {
   if (!BUNDLE.segments || !BUNDLE.alignments) return null;
   const srcEd = anchorHit.ed_id;
@@ -882,13 +1062,13 @@ function inferAlignedHit(anchorHit, dstEdId, qLen, targetCh = null) {
     const ar = BUNDLE.alignments[`${srcEd}:${srcPno}:${sg[0]}:${dstEdId}`];
     if (ar) { chosenSeg = sg; alignRec = ar; break; }
   }
-  if (!alignRec || !chosenSeg) return null;
+  if (!alignRec || !chosenSeg) return inferRangeFallback(anchorHit, dstEdId, qLen, reqCh);
 
   const [dstPno, dstSpan, dstCs, dstCe, sharedNg, conf] = alignRec;
   const dstEntry = PAGE_BY_NO[`${dstEdId}:${dstPno}`];
-  if (!dstEntry) return null;
+  if (!dstEntry) return inferRangeFallback(anchorHit, dstEdId, qLen, reqCh);
   const dstSegCh = getChapter(dstEdId, dstPno, Math.floor((dstCs + dstCe) / 2));
-  if (reqCh > 0 && dstSegCh > 0 && !chaptersCompatible(reqCh, dstSegCh)) return null;
+  if (reqCh > 0 && dstSegCh > 0 && !chaptersCompatible(reqCh, dstSegCh)) return inferRangeFallback(anchorHit, dstEdId, qLen, reqCh);
 
   const srcPages = PAGES_INDEX[srcEd];
   const prevSrc = (srcEntry.idx > 0 && srcPages[srcEntry.idx - 1].pno === srcPno - 1) ? srcPages[srcEntry.idx - 1] : null;
@@ -977,7 +1157,7 @@ function inferAlignedHit(anchorHit, dstEdId, qLen, targetCh = null) {
       spanE = Math.min(corrMap.length, spanS + Math.max(2, qLen));
       precRank = 0;
     } else {
-      return null;
+      return inferRangeFallback(anchorHit, dstEdId, qLen, reqCh);
     }
   }
   if (spanE <= spanS) spanE = Math.min(corrMap.length, spanS + Math.max(2, qLen));
@@ -1003,6 +1183,10 @@ function inferAlignedHit(anchorHit, dstEdId, qLen, targetCh = null) {
   const ys = cBoxes.flatMap(b => [b.xywh[1], b.xywh[1] + b.xywh[3]]);
   const rxywh = [Math.min(...xs), Math.min(...ys), Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)];
 
+  const dstB = reqCh > 0 ? chapterBounds(dstEdId, reqCh) : null;
+  const maxEp = dstB ? dstB[1] : (dstPno + Math.max(0, dstSpan - 1));
+  const segRange = precRank === 0 ? [dstPno, Math.min(maxEp, dstPno + Math.max(0, dstSpan - 1))] : null;
+
   return {
     ed_id: edMeta.ed_id,
     mid: edMeta.mid,
@@ -1012,6 +1196,8 @@ function inferAlignedHit(anchorHit, dstEdId, qLen, targetCh = null) {
     chapter: getChapter(dstEdId, targetPno, corrMap[spanS][1]),
     banxin: targetPg.banxin,
     hit_type: 'aligned',
+    align_precision: precRank === 2 ? 'bracket' : (precRank === 1 ? 'anchor' : 'segment'),
+    ...(segRange ? { page_range: segRange } : {}),
     via_ed: srcEd,
     via_zh_name: anchorHit.zh_name,
     via_ja_name: anchorHit.ja_name,
@@ -1412,7 +1598,16 @@ function renderApparatus(data) {
           const isAl = h.hit_type === 'aligned';
           const stampCls = isAl ? 'wit-stamp is-aligned' : 'wit-stamp';
           const viaName = LANG === 'ja' ? (h.via_ja_name || '').split('（')[0] : (h.via_zh_name || '');
-          const badgeHtml = isAl ? `<span class="rdg-align-badge">${esc(t.alignBadge(viaName, h.via_page))}</span>` : '';
+          let badgeText = '';
+          if (isAl) {
+            if (h.align_precision === 'range' || (h.align_precision === 'segment' && h.page_range)) {
+              const pr = h.page_range || [h.page_no, h.page_no];
+              badgeText = t.rangeBadge(pr[0], pr[1], h.page_no);
+            } else {
+              badgeText = t.alignBadge(viaName, h.via_page);
+            }
+          }
+          const badgeHtml = badgeText ? `<span class="rdg-align-badge">${esc(badgeText)}</span>` : '';
           const midHtml = h.char_boxes.map(cb =>
             (isAl || cb.a) ? `<span class="ch-aligned">${esc(cb.c)}</span>`
               : (cb.v ? `<span class="ch-diff">${esc(cb.c)}</span>` : `<span>${esc(cb.c)}</span>`)
@@ -1581,11 +1776,13 @@ function mountWin(grid, hit, idx) {
   const id = `osd-${idx}-${Date.now()}`;
   const isAl = hit.hit_type === 'aligned';
 
+  const isRange = isAl && hit.align_precision === 'range';
+
   win.innerHTML = `
     <div class="win-hud">
       <div class="win-label">
         <span class="win-ed">${esc(editionLabel(ed))}</span>
-        ${isAl ? `<span class="win-align-pill" data-tx="alignHud" data-t="legAlignedFull"></span>` : ''}
+        ${isAl ? `<span class="win-align-pill" data-tx="${isRange ? 'rangeHud' : 'alignHud'}" data-t="legAlignedFull"></span>` : ''}
         <span class="win-banxin">${hit.banxin ? esc(hit.banxin) : ''}</span>
       </div>
       <div class="win-nav">
