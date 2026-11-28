@@ -11,7 +11,8 @@
       close: '关闭',
       badgeTip: (v) => `当前版本 ${v} · 点击查看更新日志`,
       meta: (s) => s ? `当前收录：${s.editions} 部古籍抄本 · 本地索引 ${s.local_leaves.toLocaleString()} 叶 · 公开示范 ${s.public_leaves.toLocaleString()} 叶 · ${s.chapters} 回边界` : '',
-      currentBadge: '当前版本'
+      currentBadge: '当前版本',
+      policyFoot: '版本规范：v0.x.0 仅用于阶段里程碑，日常功能增强与修复递增末位修订号 v0.x.y。'
     },
     ja: {
       newTag: '新着',
@@ -21,7 +22,8 @@
       close: '閉じる',
       badgeTip: (v) => `現在のバージョン ${v} · クリックで更新履歴を表示`,
       meta: (s) => s ? `収録状況：古鈔本 ${s.editions} 種 ・ ローカル索引 ${s.local_leaves.toLocaleString()} 葉 ・ 公開版 ${s.public_leaves.toLocaleString()} 葉 ・ ${s.chapters} 回境界` : '',
-      currentBadge: '現在'
+      currentBadge: '現在',
+      policyFoot: 'バージョン規約：v0.x.0 は主要マイルストーン時のみ更新し、日常の改善・修正は末尾番号 v0.x.y で管理します。'
     }
   };
 
@@ -130,8 +132,17 @@
       }
       .hlm-chg .chg-date { font-size: 12px; color: #786f64; font-family: "SF Mono", Menlo, monospace; }
       .hlm-chg .chg-title { font-size: 14.5px; font-weight: 600; color: #1c1917; margin: 2px 0 6px; }
-      .hlm-chg ul { margin: 0; padding-left: 1.25em; font-size: 12.8px; line-height: 1.68; color: #4a433c; }
-      .hlm-chg li { margin: 2px 0; }
+      .hlm-chg ul { margin: 0; padding-left: 1.25em; font-size: 12.8px; line-height: 1.72; color: #4a433c; }
+      .hlm-chg li { margin: 4px 0; }
+      .hlm-chg .chg-cat {
+        display: inline-block; font-size: 11.5px; font-weight: 600; color: #8c261d;
+        background: rgba(168, 50, 40, 0.09); border: 1px solid rgba(168, 50, 40, 0.22);
+        border-radius: 3px; padding: 0 5px; margin-right: 5px; vertical-align: 1px;
+      }
+      .hlm-chg .chg-foot {
+        margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed rgba(42, 35, 29, 0.16);
+        font-size: 11.5px; color: #786f64; line-height: 1.5;
+      }
     `;
     document.head.appendChild(st);
   }
@@ -179,6 +190,12 @@
     renderBadge();
   }
 
+  function fmtItem(text) {
+    const m = String(text || '').match(/^【([^】]+)】(.*)$/);
+    if (m) return `<span class="chg-cat">${esc(m[1])}</span>${esc(m[2].trim())}`;
+    return esc(text);
+  }
+
   function renderModal() {
     if (!DATA) return;
     if (!DLG) {
@@ -197,7 +214,7 @@
     const itemsHtml = (DATA.releases || []).map((rel, idx) => {
       const loc = rel[LANG] || rel.zh;
       const isCur = idx === 0 || rel.version === DATA.current;
-      const li = (loc.items || []).map(x => `<li>${esc(x)}</li>`).join('');
+      const li = (loc.items || []).map(x => `<li>${fmtItem(x)}</li>`).join('');
       return `<section class="chg-item">
         <div class="chg-top">
           <span class="chg-ver ${isCur ? 'cur' : ''}">${esc(rel.version)}</span>
@@ -208,7 +225,7 @@
         <ul>${li}</ul>
       </section>`;
     }).join('');
-    DLG.querySelector('.chg-body').innerHTML = `${statsText ? `<p class="chg-stats">${esc(statsText)}</p>` : ''}${itemsHtml}`;
+    DLG.querySelector('.chg-body').innerHTML = `${statsText ? `<p class="chg-stats">${esc(statsText)}</p>` : ''}${itemsHtml}<p class="chg-foot">${esc(t.policyFoot)}</p>`;
   }
 
   function open(lang) {
